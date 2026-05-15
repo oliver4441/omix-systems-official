@@ -51,9 +51,9 @@ function Hero() {
                 🚀 First 5 Clients Get Free Setup
               </div>
               
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight scroll-animate blur">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight scroll-animate">
                 Websites That Get You{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] float-fast inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] inline-block">
                   More Customers
                 </span>{' '}
                 — Guaranteed
