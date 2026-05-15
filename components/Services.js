@@ -213,11 +213,11 @@ function Services() {
               </h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="flex flex-wrap gap-8 justify-center">
               {portfolioItems.map((item, index) => (
                 <div 
                   key={index} 
-                  className="glass-slide overflow-hidden hover-lift hover-scale transition-all duration-500 scroll-animate scale" 
+                  className="glass-slide overflow-hidden hover-lift hover-scale transition-all duration-500 scroll-animate scale w-full md:w-[350px] flex-shrink-0" 
                   style={{animationDelay: `${index * 0.15}s`}}
                   data-name="portfolio-item" 
                   data-file="components/Services.js"
