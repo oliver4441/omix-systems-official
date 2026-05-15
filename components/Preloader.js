@@ -8,7 +8,7 @@ function Preloader() {
         </div>
         <div className="text-center relative z-10 px-4">
           <div className="brand-font text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-6 sm:mb-8 animate-pulse">
-            <span className="text-[var(--secondary-color)]">Omix</span>
+            <span className="text-[var(--secondary-color)]">omix</span>systems
           </div>
           
           <div className="flex items-center justify-center space-x-2 mb-3 sm:mb-4">

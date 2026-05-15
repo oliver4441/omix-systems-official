@@ -5,22 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href='favicon.png' type='image/png'>
 
-    <title>Omix - Full-Stack Web Development Agency | Enterprise & SMB Solutions</title>
-    <meta name="description" content="Premium full-stack web development agency. Building scalable web applications, e-commerce platforms, and custom solutions using React, Node.js, Python and modern technologies.">
-    <meta name="keywords" content="web development, full-stack development, React developer, Node.js, Python, e-commerce development, SaaS development, enterprise web solutions, API development">
+    <title>omixsystems - Optimal Modular Integration Experts | SaaS & Web Development</title>
+    <meta name="description" content="Optimal Modular Integration Experts building scalable SaaS platforms, high-converting websites, and modern mobile applications. Based in Kericho, Kenya.">
+    <meta name="keywords" content="omixsystems, SaaS development Kenya, web development Kenya, mobile app development, modular integration, tech experts Kericho">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Omix - Full-Stack Web Development Agency">
-    <meta property="og:description" content="Premium full-stack web development. Building scalable web applications and digital solutions for businesses worldwide.">
+    <meta property="og:title" content="omixsystems - Optimal Modular Integration Experts">
+    <meta property="og:description" content="Building modern SaaS solutions and high-performance digital products for tomorrow's businesses.">
     
     <!-- Twitter -->
-    <meta name="twitter:title" content="Omix - Full-Stack Web Development Agency">
-    <meta name="twitter:description" content="Premium full-stack web development. Building scalable web applications and digital solutions for businesses worldwide.">
+    <meta name="twitter:title" content="omixsystems - Optimal Modular Integration Experts">
+    <meta name="twitter:description" content="Building modern SaaS solutions and high-performance digital products for tomorrow's businesses.">
 
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B1F3A',
+                        secondary: '#3b82f6',
+                        accent: '#22d3ee',
+                        dark: '#020617',
+                        soft: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -100,7 +115,8 @@
         }
         
         .container {
-            @apply max-width-[1280px] mx-auto;
+            max-width: 1280px;
+            @apply mx-auto;
         }
         
         @keyframes scroll-left {
