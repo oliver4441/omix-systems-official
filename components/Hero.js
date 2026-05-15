@@ -44,30 +44,35 @@ function Hero() {
           <div className="absolute w-64 sm:w-96 h-64 sm:h-96 bg-[var(--accent-color)] rounded-full blur-3xl opacity-15 -bottom-32 sm:-bottom-48 -right-20 sm:-right-48"></div>
         </div>
         
-        <div className="container relative z-10 px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="text-center lg:text-left" data-name="hero-content" data-file="components/Hero.js">
-              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] rounded-full text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-                🚀 Optimal Modular Integration Experts
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center px-4">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-bold mb-8 scroll-animate">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Optimal Modular Integration Experts
               </div>
               
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight scroll-animate">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1] scroll-animate">
                 Building Modern{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                   SaaS Solutions
                 </span>{' '}
                 for Tomorrow's Businesses
               </h1>
               
-              <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 scroll-animate fade-up" style={{animationDelay: '0.2s'}}>
-                Transforming ideas into scalable digital products with our modular integration approach. Based in <span className="text-[var(--accent-color)] font-bold">Kericho, Kenya</span> — Serving global standards.
+              <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 scroll-animate">
+                Transforming ideas into scalable digital products with our modular integration approach. Based in <span className="text-white font-bold underline decoration-blue-500/50">Kericho, Kenya</span> — Delivering global standards.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 md:mb-12">
-                <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-primary btn-interactive cta-pulse text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 font-bold text-lg">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 scroll-animate">
+                <a href="#contact" className="btn btn-primary cta-pulse group">
                   Start Your Project
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </a>
-                <a href="#work" onClick={(e) => { e.preventDefault(); document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-outline text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 font-semibold">
+                <a href="#work" className="btn btn-outline">
                   View Our Work
                 </a>
               </div>

@@ -21,7 +21,7 @@ Omix is a web development service focused on delivering high-converting websites
 
 ## Building and Running
 - **No Build Step**: This project does not require a traditional build process (e.g., Webpack, Vite). JSX transformation is handled in the browser by Babel Standalone.
-- **Local Preview**: To run the project locally, simply open `index.html` in a web browser, or serve the `greek-project` directory using any static file server.
+- **Local Preview**: To run the project locally, simply open `index.html` in a web browser, or serve the root directory using any static file server.
 - **Deployment**: The project is designed for automatic deployment via Vercel. Pushing changes to the connected Git repository will trigger a new deployment.
 
 ## Development Conventions
