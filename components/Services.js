@@ -109,6 +109,12 @@ function Services() {
 
     const omixProjects = [
       {
+        name: "omixh2",
+        description: "Full-featured School Management Platform - managing students, staff, exams, and financials through a centralized modular dashboard.",
+        url: "https://omix-h2.onrender.com/",
+        tech: ["School Management", "Admin Portal", "Data Systems"]
+      },
+      {
         name: "Fairytale",
         description: "Project tracking app for teams - manage tasks, milestones, and progress with beautiful visualizations",
         url: "https://omnianalytics.vercel.app/",
