@@ -311,24 +311,40 @@ function Services() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-1 gap-10 max-w-2xl mx-auto">
+            <div className="grid md:grid-cols-1 gap-10 max-w-4xl mx-auto">
               {team.map((member, index) => (
-                <div key={index} className="glass-slide p-6 md:p-8" data-name="team-card" data-file="components/Services.js">
-                  <div className="flex flex-col md:flex-row gap-6">
-                    <img src={member.image} alt={member.name} className="w-28 h-28 rounded-xl object-cover mx-auto md:mx-0 border border-white/20" />
-                    <div className="text-center md:text-left">
-                      <h3 className="text-2xl font-bold text-[var(--text-primary)]">{member.name}</h3>
-                      <p className="text-[var(--accent-color)] text-sm mb-2">{member.title}</p>
-                      <p className="text-[var(--text-secondary)] text-sm mb-3">{member.tagline}</p>
-                      <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">{member.bio}</p>
-                      <ul className="space-y-1">
+                <div key={index} className="glass-slide p-8 md:p-12 relative overflow-hidden group scroll-animate fade-up" data-name="team-card" data-file="components/Services.js">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--secondary-color)] opacity-5 blur-3xl rounded-full -mr-32 -mt-32"></div>
+                  <div className="flex flex-col md:flex-row gap-10 items-center md:items-start relative z-10">
+                    <div className="relative flex-shrink-0">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--secondary-color)] to-[var(--accent-color)] rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                        <img src={member.image} alt={member.name} className="w-40 h-40 md:w-56 md:h-56 rounded-2xl object-cover relative z-10 border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-105" />
+                        <div className="absolute -bottom-4 -right-4 glass-slide p-3 rounded-xl z-20 hidden md:block border border-white/20">
+                            <div className="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest">Available now</div>
+                        </div>
+                    </div>
+                    <div className="text-center md:text-left flex-1">
+                      <div className="inline-block px-3 py-1 bg-[var(--secondary-color)]/20 text-[var(--accent-color)] rounded-lg text-xs font-bold mb-4 uppercase tracking-tighter">
+                        Lead Developer
+                      </div>
+                      <h3 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-2 tracking-tighter leading-none">{member.name}</h3>
+                      <p className="text-[var(--accent-color)] text-2xl font-bold mb-6 font-['Caveat']">{member.title}</p>
+                      
+                      <div className="w-16 h-1 bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] mb-6 mx-auto md:mx-0 rounded-full"></div>
+                      
+                      <p className="text-[var(--text-primary)] text-xl font-semibold mb-4 leading-tight italic opacity-90">{member.tagline}</p>
+                      <p className="text-[var(--text-secondary)] text-base md:text-lg mb-8 leading-relaxed max-w-xl">{member.bio}</p>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {member.highlights.map((item, i) => (
-                          <li key={i} className="text-sm text-[var(--text-secondary)] flex items-center gap-2 justify-center md:justify-start">
-                            <span className="w-1.5 h-1.5 bg-[var(--secondary-color)] rounded-full"></span>
-                            {item}
-                          </li>
+                          <div key={i} className="flex items-center gap-3 text-sm text-[var(--text-secondary)] bg-white/5 p-3 rounded-xl border border-white/5 hover:border-[var(--accent-color)]/30 transition-colors group/item">
+                            <div className="w-8 h-8 rounded-lg bg-[var(--secondary-color)]/20 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span className="font-medium">{item}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
