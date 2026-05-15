@@ -2,19 +2,19 @@ function Products() {
   try {
     const services = [
       {
-        title: "Website Design",
-        description: "Custom-designed websites that reflect your brand and convert visitors into customers",
-        features: ["Responsive Design", "Modern UI/UX", "Fast Loading", "SEO Optimized"]
+        title: "SaaS Platform Development",
+        description: "Custom cloud platforms built for scale. We help you transform your business logic into a scalable, multi-tenant digital product.",
+        features: ["Multi-tenant Architecture", "Cloud Infrastructure", "API First Design", "Subscription Models"]
       },
       {
-        title: "E-commerce Setup", 
-        description: "Complete online store solutions with secure payments and inventory management",
-        features: ["Payment Integration", "Product Management", "Order Tracking", "Mobile Ready"]
+        title: "Website Development", 
+        description: "Modern, high-converting websites for businesses. Focused on performance, SEO, and seamless user experiences on all devices.",
+        features: ["Responsive Design", "Modern UI/UX", "SEO Optimization", "Fast Loading (Lighthouse 90+)"]
       },
       {
-        title: "Website Optimization",
-        description: "Performance tuning and conversion optimization for existing websites",
-        features: ["Speed Optimization", "Conversion Rate", "Analytics Setup", "Security Updates"]
+        title: "Mobile App Development",
+        description: "Native and cross-platform mobile solutions. We build powerful apps for iOS and Android that users love to interact with.",
+        features: ["iOS & Android Apps", "React Native & Flutter", "App Store Deployment", "Offline Capabilities"]
       }
     ];
 

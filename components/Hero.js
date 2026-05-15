@@ -48,33 +48,27 @@ function Hero() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left" data-name="hero-content" data-file="components/Hero.js">
               <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] rounded-full text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-                🚀 First 5 Clients Get Free Setup
+                🚀 Optimal Modular Integration Experts
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight scroll-animate">
-                Websites That Get You{' '}
+                Building Modern{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] inline-block">
-                  More Customers
+                  SaaS Solutions
                 </span>{' '}
-                — Guaranteed
+                for Tomorrow's Businesses
               </h1>
               
               <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 scroll-animate fade-up" style={{animationDelay: '0.2s'}}>
-                Brand new website in <span className="text-[var(--accent-color)] font-bold">7 days</span> or we rebuild for free. Designed for Kenyan businesses to double their leads and grow revenue.
+                Transforming ideas into scalable digital products with our modular integration approach. Based in <span className="text-[var(--accent-color)] font-bold">Kericho, Kenya</span> — Serving global standards.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 md:mb-12">
                 <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-primary btn-interactive cta-pulse text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 font-bold text-lg">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 sm:w-5 h-4 sm:h-5 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                  Get Free Website Audit
+                  Start Your Project
                 </a>
-                <a href="https://wa.me/0732649442?text=Hi,%20I%20want%20a%20website%20from%20Omix" target="_blank" rel="noopener noreferrer" className="btn btn-outline text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 font-semibold">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 sm:w-5 h-4 sm:h-5 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                  Chat Now
+                <a href="#work" onClick={(e) => { e.preventDefault(); document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-outline text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-4 font-semibold">
+                  View Our Work
                 </a>
               </div>
               

@@ -74,10 +74,10 @@ function Contact() {
                     className="px-4 py-3 glass-slide border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--secondary-color)] text-white bg-transparent"
                   >
                     <option value="">Select Service</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="e-commerce">E-commerce Solutions</option>
-                    <option value="saas">SaaS Platform</option>
-                    <option value="maintenance">Ongoing Maintenance</option>
+                    <option value="saas">SaaS Platform Development</option>
+                    <option value="web">Website Development</option>
+                    <option value="app">Mobile App Development</option>
+                    <option value="consultation">Free Strategy Consultation</option>
                   </select>
                 </div>
                 

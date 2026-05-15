@@ -30,9 +30,9 @@ function Navigation() {
               data-file="components/Navigation.js"
             >
               <span className="text-[var(--secondary-color)]">
-                <span className="font-bold italic">O</span>mix
+                <span className="font-bold">omix</span>systems
               </span>
-              <span className="text-[var(--text-secondary)] text-sm ml-2 hidden sm:inline">Full-Stack Development</span>
+              <span className="text-[var(--text-secondary)] text-xs ml-2 hidden sm:inline uppercase tracking-widest opacity-60">Modular Integration Experts</span>
             </div>
             
             <div className="hidden lg:flex items-center space-x-6 lg:space-x-8" data-name="nav-menu" data-file="components/Navigation.js">

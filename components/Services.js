@@ -66,15 +66,15 @@ function Services() {
     const steps = [
       {
         title: "Discovery",
-        description: "We analyze your requirements and create a detailed roadmap"
+        description: "We analyze your requirements and create a detailed roadmap."
       },
       {
-        title: "Development",
-        description: "Our team builds your solution with clean, scalable code"
+        title: "Design & Dev",
+        description: "Our team builds your solution with clean, modular, and scalable code."
       },
       {
-        title: "Deployment",
-        description: "We deploy to production with monitoring & support"
+        title: "Deploy & Support",
+        description: "We handle production deployment and provide ongoing monitoring."
       }
     ];
 
@@ -101,12 +101,10 @@ function Services() {
     ];
 
     const whyChooseUs = [
-      { title: "Expert Team", description: "Skilled developers with 5+ years experience in modern technologies", icon: "👨‍💻" },
-      { title: "Agile Process", description: "Iterative development with regular updates and flexible scope", icon: "🔄" },
-      { title: "Code Quality", description: "Clean, documented code following best practices", icon: "✨" },
-      { title: "Ongoing Support", description: "Post-launch maintenance and 24/7 critical support", icon: "🛟" },
-      { title: "Scalable Architecture", description: "Built to grow with your business needs", icon: "📈" },
-      { title: "Competitive Pricing", description: "Enterprise quality at reasonable rates", icon: "💰" }
+      { title: "Modular Approach", description: "Flexible, scalable solutions built with a modular architecture for easy integration.", icon: "🧩" },
+      { title: "Local Expertise", description: "Deep understanding of the African and Kenyan market needs and infrastructure.", icon: "🇰🇪" },
+      { title: "Modern Stack", description: "Built using cutting-edge technologies like React, Next.js, and Node.js.", icon: "⚡" },
+      { title: "Fast Delivery", description: "Agile development methodology ensuring your project launches on time.", icon: "🚀" }
     ];
 
     const omixProjects = [
@@ -159,13 +157,13 @@ function Services() {
           <div className="container relative z-10">
             <div className="text-center mb-16">
               <div className="inline-block px-4 py-2 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-6">
-                Why Choose Omix
+                Why Choose omixsystems
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-                Built by <span className="text-[var(--secondary-color)]">Experts</span>, Delivered with <span className="text-[var(--secondary-color)]">Purpose</span>
+                Optimal <span className="text-[var(--secondary-color)]">Modular</span> Integration Experts
               </h2>
               <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-                We combine technical expertise with business acumen to deliver solutions that drive real results
+                Founded in Kericho, Kenya (2025), we make enterprise-grade technology accessible to businesses of all sizes.
               </p>
             </div>
             
@@ -250,13 +248,13 @@ function Services() {
           <div className="container relative z-10">
             <div className="text-center mb-16">
               <div className="inline-block px-4 py-2 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-6">
-                More from Omix
+                Our Innovation Lab
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-                Other <span className="text-[var(--secondary-color)]">Projects</span> We've Built
+                Internal <span className="text-[var(--secondary-color)]">SaaS Projects</span>
               </h2>
               <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-                Expanding our ecosystem of digital tools for businesses and learners
+                Demonstrating our modular integration approach through internal digital products.
               </p>
             </div>
             
