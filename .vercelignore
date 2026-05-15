@@ -1,0 +1,7 @@
+.git
+trickle/
+AGENTS.md
+GEMINI.md
+project-proj_*.zip
+.env*
+node_modules
