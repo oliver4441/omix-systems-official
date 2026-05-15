@@ -89,7 +89,7 @@ function Services() {
           "50+ production websites",
           "Performance & SEO focused"
         ],
-        image: "assets/langat.jpg"
+        image: "/assets/langat.jpg"
       }
     ];
 
