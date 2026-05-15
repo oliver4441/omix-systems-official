@@ -171,8 +171,14 @@ function Services() {
             
             <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6 mb-8">
               {whyChooseUs.map((item, index) => (
-                <div key={index} className="glass-slide p-6 text-center hover:scale-[1.02] transition-all duration-300" data-name="why-choose-card" data-file="components/Services.js">
-                  <div className="text-4xl mb-4">{item.icon}</div>
+                <div 
+                  key={index} 
+                  className="glass-slide p-6 text-center hover-lift hover-scale transition-all duration-300 scroll-animate fade-up" 
+                  style={{animationDelay: `${index * 0.1}s`}}
+                  data-name="why-choose-card" 
+                  data-file="components/Services.js"
+                >
+                  <div className="text-4xl mb-4 float-element">{item.icon}</div>
                   <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{item.title}</h3>
                   <p className="text-sm text-[var(--text-secondary)]">{item.description}</p>
                 </div>
@@ -207,11 +213,14 @@ function Services() {
               {portfolioItems.map((item, index) => (
                 <div 
                   key={index} 
-                  className="glass-slide overflow-hidden hover:scale-[1.02] transition-all duration-500" 
+                  className="glass-slide overflow-hidden hover-lift hover-scale transition-all duration-500 scroll-animate scale" 
+                  style={{animationDelay: `${index * 0.15}s`}}
                   data-name="portfolio-item" 
                   data-file="components/Services.js"
                 >
-                  <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
+                  <div className="overflow-hidden">
+                    <img src={item.image} alt={item.title} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700" />
+                  </div>
                   <div className="p-6">
                     <div className="inline-block px-3 py-1 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-4">
                       {item.result}

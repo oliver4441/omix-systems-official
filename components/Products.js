@@ -79,9 +79,10 @@ function Products() {
             {services.map((service, index) => (
                 <div 
                   key={index} 
-                  className="glass-slide p-5 md:p-8 hover:scale-[1.02] transition-all duration-500 cursor-pointer overflow-hidden"
+                  className="glass-slide p-5 md:p-8 hover-lift hover-scale transition-all duration-500 cursor-pointer overflow-hidden scroll-animate fade-up"
+                  style={{animationDelay: `${index * 0.1}s`}}
                 >
-                <div className="w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-gradient-to-br from-[var(--secondary-color)] to-[var(--accent-color)] flex items-center justify-center mb-4 md:mb-6">
+                <div className="w-12 md:w-16 h-12 md:h-16 rounded-2xl bg-gradient-to-br from-[var(--secondary-color)] to-[var(--accent-color)] flex items-center justify-center mb-4 md:mb-6 float-element">
                   {index === 0 && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 h-6 md:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>}
                   {index === 1 && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 h-6 md:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>}
                   {index === 2 && <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 h-6 md:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}

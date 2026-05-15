@@ -51,15 +51,15 @@ function Hero() {
                 🚀 First 5 Clients Get Free Setup
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight scroll-animate blur">
                 Websites That Get You{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)] float-fast inline-block">
                   More Customers
                 </span>{' '}
                 — Guaranteed
               </h1>
               
-              <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 scroll-animate fade-up" style={{animationDelay: '0.2s'}}>
                 Brand new website in <span className="text-[var(--accent-color)] font-bold">7 days</span> or we rebuild for free. Designed for Kenyan businesses to double their leads and grow revenue.
               </p>
               
