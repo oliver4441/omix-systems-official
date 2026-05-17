@@ -117,8 +117,8 @@ function Hero() {
             <div className="relative hidden lg:block" data-name="hero-visual" data-file="components/Hero.js">
               <div className="relative glass-slide p-4 sm:p-6 md:p-8 shadow-2xl rounded-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Modern website dashboard"
+                  src="favicon.png"
+                  alt="Omix Logo"
                   className="w-full rounded-lg shadow-lg"
                 />
                 <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 glass-slide p-3 sm:p-4 shadow-xl">
