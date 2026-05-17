@@ -55,7 +55,7 @@ function Hero() {
                 Optimal Modular Integration Experts
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1] scroll-animate">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight leading-[1.1] scroll-animate">
                 Building Modern{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                   SaaS Solutions
@@ -63,11 +63,11 @@ function Hero() {
                 for Tomorrow's Businesses
               </h1>
               
-              <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 scroll-animate">
+              <p className="text-lg md:text-xl text-slate-400 mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0 scroll-animate">
                 Transforming ideas into scalable digital products with our modular integration approach. Based in <span className="text-white font-bold underline decoration-blue-500/50">Kericho, Kenya</span> — Delivering global standards.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 scroll-animate">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 scroll-animate">
                 <a href="#contact" className="btn btn-primary cta-pulse group">
                   Start Your Project
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
