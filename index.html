@@ -26,6 +26,10 @@
             darkMode: "class",
             theme: {
                 extend: {
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem',
+                    },
                     colors: {
                         trueGray: {
                             50: '#fafafa',
@@ -39,7 +43,10 @@
                             800: '#262626',
                             900: '#171717',
                         },
-                        primary: '#4f46e5', // Indigo-600 from Nextly
+                        primary: '#4f46e5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
@@ -65,14 +72,18 @@
     @layer base {
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
+            background-color: #ffffff;
+            color: #171717;
             scroll-behavior: smooth;
         }
         
-        .brand-font {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
+        .dark body {
+            background-color: #171717;
+            color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            @apply tracking-tight font-bold text-gray-900 dark:text-white;
         }
     }
 
