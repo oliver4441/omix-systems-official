@@ -9,7 +9,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo.componentStack);
+    console.error("ErrorBoundary caught an error:", error, errorInfo.componentStack);
   }
 
   render() {
@@ -18,18 +18,12 @@ class ErrorBoundary extends React.Component {
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-900 mb-4">Something went wrong</h1>
-            <p className="text-gray-600 mb-4">We're sorry, but something unexpected happened.</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="btn btn-black"
-            >
-              Reload Page
-            </button>
+            <p className="text-gray-600 mb-4">We are sorry, but something unexpected happened.</p>
+            <button onClick={() => window.location.reload()} className="btn btn-black">Reload Page</button>
           </div>
         </div>
       );
     }
-
     return this.props.children;
   }
 }
@@ -38,10 +32,11 @@ function App() {
   try {
     return (
       <div className="min-h-screen bg-[var(--bg-dark)] relative overflow-hidden" data-name="omix-app" data-file="app.js">
+        <Preloader />
         <div className="relative z-20">
           <Navigation />
           <Hero />
-          <Products />
+          <About />
           <Services />
           <Pricing />
           <Contact />
@@ -51,12 +46,12 @@ function App() {
       </div>
     );
   } catch (error) {
-    console.error('App component error:', error);
+    console.error("App component error:", error);
     return null;
   }
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ErrorBoundary>
     <App />
