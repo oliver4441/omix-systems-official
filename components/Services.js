@@ -1,158 +1,107 @@
 function Services() {
   try {
-    const techStack = [
-      { name: "React", icon: "⚛️" },
-      { name: "Node.js", icon: "🟢" },
-      { name: "Python", icon: "🐍" },
-      { name: "PostgreSQL", icon: "🐘" },
-      { name: "MongoDB", icon: "🍃" },
-      { name: "AWS", icon: "☁️" },
-      { name: "Vercel", icon: "▲" },
-      { name: "Docker", icon: "🐳" },
-      { name: "TypeScript", icon: "📘" },
-      { name: "GraphQL", icon: "◼️" }
+    const services = [
+      {
+        title: "SaaS Platform Development",
+        desc: "Custom cloud platforms built for scale. We help you transform your business logic into a scalable, multi-tenant digital product.",
+        features: ["Multi-tenant Architecture", "Cloud Infrastructure", "API First Design", "Subscription Models"],
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+          </svg>
+        ),
+      },
+      {
+        title: "Website Development",
+        desc: "Modern, high-converting websites for businesses. Focused on performance, SEO, and seamless user experiences on all devices.",
+        features: ["Responsive Design", "Modern UI/UX", "SEO Optimization", "Fast Loading (Lighthouse 90+)"],
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+          </svg>
+        ),
+      },
+      {
+        title: "Mobile App Development",
+        desc: "Native and cross-platform mobile solutions. We build powerful apps for iOS and Android that users love.",
+        features: ["iOS & Android Apps", "React Native & Flutter", "App Store Deployment", "Offline Capabilities"],
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+        ),
+      },
+      {
+        title: "API Development",
+        desc: "Robust, secure APIs that power your applications. RESTful and GraphQL APIs designed for performance and scalability.",
+        features: ["REST & GraphQL APIs", "Authentication & Security", "Documentation", "Third-party Integrations"],
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        ),
+      },
     ];
 
-    const faqs = [
-      {
-        question: "How long does it take to build a website?",
-        answer: "Most projects are completed within 7-14 days depending on complexity. Starter packages take 5-7 days, while more complex projects may take 2-3 weeks."
-      },
-      {
-        question: "Do you offer ongoing maintenance?",
-        answer: "Yes! We offer monthly maintenance packages starting at KES 1,000/month covering updates, fixes, and minor changes."
-      },
-      {
-        question: "Can I update the website myself?",
-        answer: "Absolutely. We provide a simple dashboard for managing content, or we can update it for you as part of our maintenance package."
-      },
-      {
-        question: "What payment methods do you accept?",
-        answer: "We accept M-Pesa, bank transfers, and payment splits (50% upfront, 50% after completion)."
-      },
-      {
-        question: "Do you offer refunds?",
-        answer: "Yes, if we're unable to deliver as promised, full refunds are available within the first 3 days. We want you fully satisfied."
-      }
-    ];
-
-    const steps = [
-      {
-        title: "Discovery",
-        description: "We analyze your requirements and create a detailed roadmap."
-      },
-      {
-        title: "Design & Dev",
-        description: "Our team builds your solution with clean, modular, and scalable code."
-      },
-      {
-        title: "Deploy & Support",
-        description: "We handle production deployment and provide ongoing monitoring."
-      }
-    ];
-
-    const clientLogos = [
-      "Golden Source Agencies",
-      "Nairobi Food Hub",
-      "Power Fitness",
-      "Beauty & Style Salon"
-    ];
-
-    const whyChooseUs = [
-      { title: "Modular Approach", description: "Flexible, scalable solutions built with a modular architecture for easy integration.", icon: "🧩" },
-      { title: "Local Expertise", description: "Deep understanding of the African and Kenyan market needs and infrastructure.", icon: "🇰🇪" },
-      { title: "Modern Stack", description: "Built using cutting-edge technologies like React, Next.js, and Node.js.", icon: "⚡" },
-      { title: "Fast Delivery", description: "Agile development methodology ensuring your project launches on time.", icon: "🚀" }
-    ];
-
-    const omixProjects = [
-      {
-        name: "omixh2",
-        description: "Full-featured School Management Platform - managing students, staff, exams, and financials through a centralized modular dashboard.",
-        url: "https://omix-h2.onrender.com/",
-        tech: ["School Management", "Admin Portal", "Data Systems"]
-      },
-      {
-        name: "Fairytale",
-        description: "Project tracking app for teams - manage tasks, milestones, and progress with beautiful visualizations",
-        url: "https://omnianalytics.vercel.app/",
-        tech: ["Task Tracking", "Team Collaboration", "Analytics"]
-      },
-      {
-        name: "Kora Hub",
-        description: "Learn web development from scratch - interactive courses, hands-on projects, and community support",
-        url: "https://kora-ivory.vercel.app",
-        tech: ["Web Dev Courses", "Interactive Learning", "Community"]
-      }
+    const projects = [
+      { name: "omixh2", desc: "Full-featured School Management Platform — managing students, staff, exams, and financials.", url: "https://omix-h2.onrender.com/", tags: ["School Management", "Admin Portal", "Data Systems"] },
+      { name: "Fairytale", desc: "Project tracking app for teams — manage tasks, milestones, and progress.", url: "https://omnianalytics.vercel.app/", tags: ["Task Tracking", "Team Collaboration", "Analytics"] },
+      { name: "Kora Hub", desc: "Learn web development from scratch — interactive courses, hands-on projects.", url: "https://kora-ivory.vercel.app", tags: ["Web Dev Courses", "Interactive Learning", "Community"] },
     ];
 
     return (
       <>
-        <section className="section-padding relative overflow-hidden" data-name="tech-section" data-file="components/Services.js">
-          <div className="container relative z-10">
-            <div className="text-center mb-12">
-              <div className="inline-block px-4 py-2 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-6">
-                Technologies We Use
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
-                Modern <span className="text-[var(--secondary-color)]">Tech Stack</span>
-              </h2>
-              <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-                We build with industry-standard technologies ensuring scalability, security, and performance
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-              {techStack.map((tech, index) => (
-                <div key={index} className="glass-slide px-4 md:px-6 py-3 rounded-xl flex items-center gap-2 hover:scale-105 transition-transform cursor-default">
-                  <span className="text-xl">{tech.icon}</span>
-                  <span className="text-sm md:text-base font-medium text-[var(--text-primary)]">{tech.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="why" className="section-padding relative overflow-hidden" data-name="portfolio-section" data-file="components/Services.js">
-          <div className="absolute inset-0 opacity-25">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-soft)]/85 via-[var(--bg-soft)]/80 to-[var(--bg-soft)]"></div>
-          </div>
-          
+        {/* Services Page */}
+        <section id="services" className="page-section relative overflow-hidden" data-name="services" data-file="components/Services.js">
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0a0a1a] to-[var(--bg-dark)]"></div>
           <div className="container relative z-10">
             <div className="text-center mb-16">
-              <div className="inline-block px-4 py-2 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-6">
-                Why Choose omixsystems
+              <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
+                Our Services
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-                Optimal <span className="text-[var(--secondary-color)]">Modular</span> Integration Experts
+              <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
+                Everything You Need to{" "}
+                <span className="text-[var(--secondary-color)]">Succeed Online</span>
               </h2>
               <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-                Founded in Kericho, Kenya (2025), we make enterprise-grade technology accessible to businesses of all sizes.
+                From design to launch, we handle everything so you can focus on growing your business.
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              {whyChooseUs.map((item, index) => (
-                <div 
-                  key={index} 
-                  className="glass-slide p-6 text-center hover-lift hover-scale transition-all duration-300 scroll-animate fade-up" 
-                  style={{animationDelay: `${index * 0.1}s`}}
-                  data-name="why-choose-card" 
-                  data-file="components/Services.js"
-                >
-                  <div className="text-4xl mb-4 float-element">{item.icon}</div>
-                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[var(--text-secondary)]">{item.description}</p>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-20">
+              {services.map((service, i) => (
+                <div key={i} className="glass-card p-6 md:p-8 hover-lift transition-all duration-300 group">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--secondary-color)] to-[var(--accent-color)] flex items-center justify-center mb-5 text-white group-hover:scale-110 transition-transform">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] mb-3">{service.title}</h3>
+                  <p className="text-[var(--text-secondary)] mb-5 leading-relaxed">{service.desc}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((f, fi) => (
+                      <li key={fi} className="flex items-center text-sm text-[var(--text-secondary)]">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[var(--accent-color)] mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
-            
-            <div className="glass-slide p-6 rounded-2xl">
-              <p className="text-center text-sm text-[var(--text-secondary)] mb-4">Trusted by businesses across Kenya</p>
-              <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-                {clientLogos.map((client, index) => (
-                  <div key={index} className="glass-slide px-4 py-2 rounded-lg">
-                    <span className="text-sm font-medium text-[var(--text-primary)]">{client}</span>
+
+            {/* Who this is for */}
+            <div className="max-w-4xl mx-auto glass-card p-6 md:p-8 mb-20">
+              <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6 text-center">Who This Is For</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  { title: "Local Businesses", desc: "Restaurants, salons, shops, clinics — any business that needs a professional online presence." },
+                  { title: "Startups", desc: "Launch fast with a product that looks good, works well, and can scale as you grow." },
+                  { title: "Online Sellers", desc: "E-commerce stores, service providers, and digital product creators ready to sell online." },
+                ].map((item, i) => (
+                  <div key={i} className="text-center">
+                    <h4 className="font-semibold text-[var(--text-primary)] mb-2">{item.title}</h4>
+                    <p className="text-sm text-[var(--text-secondary)]">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -160,79 +109,35 @@ function Services() {
           </div>
         </section>
 
-
-        <section className="section-padding relative overflow-hidden" data-name="how-it-works-section" data-file="components/Services.js">
-          <div className="absolute inset-0 opacity-25">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/85 via-[var(--bg-dark)]/80 to-[var(--bg-dark)]"></div>
+        {/* Internal Projects */}
+        <section className="page-section relative overflow-hidden" data-name="projects" data-file="components/Services.js">
+          <div className="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover opacity-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-                How It <span className="text-[var(--secondary-color)]">Works</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
+                Our <span className="text-[var(--secondary-color)]">Innovation Lab</span>
               </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {steps.map((step, index) => (
-                <div key={index} className="glass-slide p-8 text-center" data-name="step-card" data-file="components/Services.js">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[var(--secondary-color)] to-[var(--accent-color)] flex items-center justify-center mx-auto mb-6">
-                    {index === 0 && <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>}
-                    {index === 1 && <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>}
-                    {index === 2 && <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>}
-                  </div>
-                  <div className="text-5xl font-bold text-[var(--secondary-color)] mb-4">{index + 1}</div>
-                  <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-4">{step.title}</h3>
-                  <p className="text-[var(--text-secondary)]">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-padding relative overflow-hidden" data-name="omix-projects-section" data-file="components/Services.js">
-          <div className="absolute inset-0 opacity-25">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/85 via-[var(--bg-dark)]/80 to-[var(--bg-dark)]"></div>
-          </div>
-          <div className="container relative z-10">
-            <div className="text-center mb-16">
-              <div className="inline-block px-4 py-2 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-6">
-                Our Innovation Lab
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-                Internal <span className="text-[var(--secondary-color)]">SaaS Projects</span>
-              </h2>
-              <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-                Demonstrating our modular integration approach through internal digital products.
+              <p className="text-lg text-[var(--text-secondary)] max-w-xl mx-auto">
+                Internal products demonstrating our modular integration approach.
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-              {omixProjects.map((project, index) => (
-                <a 
-                  key={index} 
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-slide p-5 md:p-8 hover:scale-[1.02] transition-all duration-300 group block overflow-hidden"
-                  data-name="project-card"
-                  data-file="components/Services.js"
-                >
-                  <div className="flex items-center justify-between mb-3 md:mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-color)] transition-colors truncate">
-                      {project.name}
-                    </h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[var(--accent-color)] flex-shrink-0 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {projects.map((p, i) => (
+                <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="glass-card p-6 hover-lift transition-all duration-300 group block">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-color)] transition-colors">{p.name}</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[var(--accent-color)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </div>
-                  <p className="text-sm md:text-base text-[var(--text-secondary)] mb-4 md:mb-6 line-clamp-3">{project.description}</p>
+                  <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">{p.desc}</p>
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="px-2 md:px-3 py-1 glass-slide rounded-full text-xs text-[var(--accent-color)] whitespace-nowrap">
-                        {tech}
-                      </span>
+                    {p.tags.map((tag, ti) => (
+                      <span key={ti} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-[var(--text-secondary)]">{tag}</span>
                     ))}
                   </div>
                 </a>
@@ -240,36 +145,10 @@ function Services() {
             </div>
           </div>
         </section>
-
-        <section className="section-padding relative overflow-hidden" data-name="faq-section" data-file="components/Services.js">
-          <div className="absolute inset-0 opacity-25">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/85 via-[var(--bg-dark)]/80 to-[var(--bg-dark)]"></div>
-          </div>
-          <div className="container relative z-10">
-            <div className="text-center mb-16">
-              <div className="inline-block px-4 py-2 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-6">
-                FAQ
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-                Frequently <span className="text-[var(--secondary-color)]">Asked</span> Questions
-              </h2>
-            </div>
-            
-            <div className="max-w-3xl mx-auto space-y-4">
-              {faqs.map((faq, index) => (
-                <div key={index} className="glass-slide p-6" data-name="faq-item" data-file="components/Services.js">
-                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{faq.question}</h3>
-                  <p className="text-[var(--text-secondary)]">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </>
     );
   } catch (error) {
-    console.error('Services component error:', error);
+    console.error("Services component error:", error);
     return null;
   }
 }
