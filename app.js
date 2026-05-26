@@ -43,6 +43,7 @@ function App() {
           <Hero />
           <Products />
           <Services />
+          <Pricing />
           <Contact />
           <Footer />
           <WhatsAppButton />
