@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='favicon.png' type='image/png'>
+    <link rel="icon" href="favicon.png" type="image/png">
 
     <title>omixsystems - Optimal Modular Integration Experts | SaaS & Web Development</title>
     <meta name="description" content="Optimal Modular Integration Experts building scalable SaaS platforms, high-converting websites, and modern mobile applications. Based in Kericho, Kenya.">
@@ -11,8 +11,7 @@
     <meta name="author" content="omixsystems">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://omixsystems.store/">
-    
-    <!-- Open Graph -->
+
     <meta property="og:title" content="omixsystems - Optimal Modular Integration Experts">
     <meta property="og:description" content="Building modern SaaS solutions and high-performance digital products for tomorrow's businesses.">
     <meta property="og:image" content="https://omixsystems.store/favicon.png">
@@ -20,8 +19,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="omixsystems">
     <meta property="og:locale" content="en_KE">
-    
-    <!-- Twitter -->
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="omixsystems - Optimal Modular Integration Experts">
     <meta name="twitter:description" content="Building modern SaaS solutions and high-performance digital products for tomorrow's businesses.">
@@ -36,36 +34,20 @@
             darkMode: "class",
             theme: {
                 extend: {
-                    spacing: {
-                        '128': '32rem',
-                        '144': '36rem',
-                    },
+                    spacing: { "128": "32rem", "144": "36rem" },
                     colors: {
-                        trueGray: {
-                            50: '#fafafa',
-                            100: '#f5f5f5',
-                            200: '#e5e5e5',
-                            300: '#d4d4d4',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                        },
-                        primary: '#4f46e5',
+                        primary: "#4f46e5",
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
     </script>
     <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -74,268 +56,89 @@
         "description": "Optimal Modular Integration Experts building scalable SaaS platforms and high-converting websites. Based in Kericho, Kenya.",
         "url": "https://omixsystems.store/",
         "email": "omixsystems@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Kericho",
-            "addressCountry": "KE"
-        },
+        "address": { "@type": "PostalAddress", "addressLocality": "Kericho", "addressCountry": "KE" },
         "sameAs": []
     }
     </script>
 
-    <!-- Predefined Tailwind CSS, use it as needed, or update base on your -->
     <style type="text/tailwindcss">
     @layer theme {
         :root {
             --primary-color: #4f46e5;
-            --bg-dark: #171717;
-            --bg-soft: #262626;
+            --bg-dark: #0a0a1a;
+            --bg-soft: #111827;
             --text-primary: #f5f5f5;
-            --text-secondary: #a3a3a3;
+            --text-secondary: #9ca3af;
             --accent-color: #60a5fa;
             --secondary-color: #3b82f6;
-            --glass-bg: rgba(23, 23, 23, 0.8);
-            --glass-border: rgba(255, 255, 255, 0.05);
         }
     }
 
     @layer base {
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #171717;
+            font-family: "Inter", sans-serif;
+            background-color: #0a0a1a;
+            color: #f5f5f5;
             scroll-behavior: smooth;
         }
-        
-        .dark body {
-            background-color: #171717;
-            color: #f5f5f5;
-        }
-
         h1, h2, h3 {
-            @apply tracking-tight font-bold text-gray-900 dark:text-white;
+            @apply tracking-tight font-bold text-white;
         }
     }
 
     @layer components {
         .btn {
-            @apply px-8 py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2;
+            @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2;
         }
-        
         .btn-primary {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
-            @apply rounded-md font-medium;
+            @apply rounded-lg font-medium shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40;
         }
-        
-        .btn-primary:hover {
-            @apply opacity-90;
-        }
-        
         .btn-outline {
             background: transparent;
-            border: 1px solid var(--text-secondary);
-            color: var(--text-secondary);
-            @apply rounded-md font-medium;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #d1d5db;
+            @apply rounded-lg font-medium hover:border-white/30 hover:text-white;
         }
-        
-        .btn-outline:hover {
-            @apply border-white text-white;
-        }
-        
-        .card-glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            @apply rounded-2xl transition-all duration-300;
-        }
-
-        .glass-slide {
-            background: var(--glass-bg);
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             @apply rounded-2xl transition-all duration-300;
         }
-        
-        .section-padding {
-            @apply py-20 md:py-32 px-4 md:px-6;
+        .page-section {
+            @apply py-20 md:py-28 px-4 md:px-6 relative;
         }
-        
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             @apply mx-auto;
         }
-        
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        .news-ticker {
-            display: flex;
-            animation: scroll-left 40s linear infinite;
-            width: fit-content;
-        }
-        
-        .ticker-item {
-            @apply whitespace-nowrap px-12 text-lg font-medium text-[var(--accent-color)] opacity-80 uppercase tracking-widest;
-        }
-        
-        .scroll-animate {
-            @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
-        }
-        
-        .scroll-animate.visible {
-            @apply opacity-100 translate-y-0;
-        }
-
         .hover-lift:hover {
-            @apply -translate-y-2 shadow-2xl shadow-blue-500/10;
+            @apply -translate-y-1;
         }
-
-        .hover-scale:hover {
-            @apply scale-[1.02];
-        }
-
         .cta-pulse {
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
-
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.95; transform: scale(1.02); }
         }
     }
     </style>
-
 </head>
-<body>
-    <div id="scroll-progress" class="scroll-progress"></div>
-    
-    <button id="scroll-to-top" class="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-        </svg>
-    </button>
-
-    <style>
-        .magnetic-wrap {
-            display: inline-block;
-        }
-        
-        .glow-on-hover {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .glow-on-hover::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-        
-        .glow-on-hover:hover::after {
-            opacity: 1;
-        }
-
-        @keyframes float-fast {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .float-fast {
-            animation: float-fast 3s ease-in-out infinite;
-        }
-
-        .reveal-text {
-            background: linear-gradient(to right, #fff 50%, #666 50%);
-            background-size: 200% 100%;
-            background-position-x: 100%;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            transition: background-position-x 1s;
-        }
-
-        .reveal-text.visible {
-            background-position-x: 0%;
-        }
-    </style>
-
+<body class="dark">
     <div id="root"></div>
 
     <script type="text/babel" src="components/Preloader.js"></script>
     <script type="text/babel" src="components/Navigation.js"></script>
     <script type="text/babel" src="components/Hero.js"></script>
-    <script type="text/babel" src="components/Products.js"></script>
+    <script type="text/babel" src="components/About.js"></script>
     <script type="text/babel" src="components/Services.js"></script>
     <script type="text/babel" src="components/Pricing.js"></script>
     <script type="text/babel" src="components/Contact.js"></script>
     <script type="text/babel" src="components/Footer.js"></script>
     <script type="text/babel" src="components/WhatsAppButton.js"></script>
     <script type="text/babel" src="app.js"></script>
-    <script>
-        window.addEventListener('scroll', function() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            var progressBar = document.getElementById('scroll-progress');
-            if (progressBar) progressBar.style.width = scrolled + '%';
-            
-            var scrollBtn = document.getElementById('scroll-to-top');
-            if (scrollBtn) {
-                if (winScroll > 300) {
-                    scrollBtn.classList.add('visible');
-                } else {
-                    scrollBtn.classList.remove('visible');
-                }
-            }
-        });
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            var lazyImages = document.querySelectorAll('img[data-src]');
-            lazyImages.forEach(function(img) {
-                img.src = img.dataset.src;
-            });
-            
-            var observerOptions = {
-                threshold: 0.05,
-                rootMargin: '0px 0px -80px 0px'
-            };
-            
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            var elements = document.querySelectorAll('.scroll-animate, .stagger-item');
-            for (var i = 0; i < elements.length; i++) {
-                observer.observe(elements[i]);
-            }
-            
-            var scrollTimeout;
-            window.addEventListener('scroll', function() {
-                if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
-                scrollTimeout = requestAnimationFrame(function() {
-                    var scrolled = window.pageYOffset;
-                    var parallaxEls = document.querySelectorAll('.parallax');
-                    for (var j = 0; j < parallaxEls.length; j++) {
-                        var speed = parallaxEls[j].dataset.speed || 0.5;
-                        parallaxEls[j].style.transform = 'translateY(' + (scrolled * speed) + 'px)';
-                    }
-                });
-            }, { passive: true });
-        });
-    </script>
 </body>
 </html>
