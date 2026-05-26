@@ -1,9 +1,20 @@
 function Preloader() {
   try {
+    const [isVisible, setIsVisible] = React.useState(true);
+
+    React.useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 1800);
+      return () => clearTimeout(timer);
+    }, []);
+
+    if (!isVisible) return null;
+
     return (
-      <div className="fixed inset-0 bg-[var(--bg-dark)] z-[9999] flex flex-col items-center justify-center overflow-hidden" data-name="preloader" data-file="components/Preloader.js">
+      <div className="fixed inset-0 bg-[var(--bg-dark)] z-[9999] flex flex-col items-center justify-center overflow-hidden transition-opacity duration-700" data-name="preloader" data-file="components/Preloader.js">
         <div className="absolute inset-0">
-          <img src="favicon.png" alt="Omix Logo" className="w-full h-full object-cover opacity-25" />
+          <img src="favicon.png" alt="" role="presentation" className="w-full h-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/80 via-[var(--bg-dark)]/60 to-[var(--bg-dark)]"></div>
         </div>
         <div className="text-center relative z-10 px-4">
