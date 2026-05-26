@@ -3,12 +3,12 @@ function Hero() {
     const [bgIndex, setBgIndex] = React.useState(0);
     
     const backgrounds = [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6da7d?w=1920&q=80' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1920&q=80' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1522071820081-009f3209d78b?w=1920&q=80' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80', alt: 'Dashboard analytics on screen' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6da7d?w=1920&q=80', alt: 'Team collaborating on project' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80', alt: 'Modern workspace with laptops' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80', alt: 'Code on developer screen' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1920&q=80', alt: 'Design collaboration session' },
+      { type: 'image', src: 'https://images.unsplash.com/photo-1522071820081-009f3209d78b?w=1920&q=80', alt: 'Creative team working together' },
     ];
 
     React.useEffect(() => {
@@ -18,7 +18,8 @@ function Hero() {
       return () => clearInterval(interval);
     }, []);
 
-    const scrollToContact = () => {
+    const scrollToContact = (e) => {
+      e.preventDefault();
       const element = document.getElementById('contact');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -30,13 +31,7 @@ function Hero() {
     return (
       <section id="home" className="min-h-screen bg-[var(--bg-dark)] flex items-center justify-center relative pt-16 sm:pt-20 lg:pt-24 overflow-hidden" data-name="hero-section" data-file="components/Hero.js">
         <div className="absolute inset-0">
-          {currentBg.type === 'video' ? (
-            <video key={`video-${bgIndex}`} autoPlay loop muted playsInline className="w-full h-full object-cover opacity-40" poster={currentBg.poster}>
-              <source src={currentBg.src} type="video/mp4" />
-            </video>
-          ) : (
-            <img key={`img-${bgIndex}`} src={currentBg.src} alt="Background" className="w-full h-full object-cover opacity-40 gpu-accelerated" loading="lazy" />
-          )}
+          <img key={`img-${bgIndex}`} src={currentBg.src} alt={currentBg.alt} className="w-full h-full object-cover opacity-40 gpu-accelerated" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/70 via-[var(--bg-dark)]/50 to-[var(--bg-dark)]"></div>
         </div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -68,7 +63,7 @@ function Hero() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 scroll-animate">
-                <a href="#contact" className="btn btn-primary cta-pulse group">
+                <a href="#contact" onClick={scrollToContact} className="btn btn-primary cta-pulse group">
                   Start Your Project
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </a>
@@ -79,19 +74,19 @@ function Hero() {
               
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mb-6">
                 <div className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-sm text-[var(--text-secondary)]">7-Day Delivery</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-sm text-[var(--text-secondary)]">Money-Back Guarantee</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-sm text-[var(--text-secondary)]">Free Revisions</span>
@@ -118,12 +113,12 @@ function Hero() {
               <div className="relative glass-slide p-4 sm:p-6 md:p-8 shadow-2xl rounded-2xl">
                 <img 
                   src="favicon.png"
-                  alt="Omix Logo"
+                  alt="omixsystems logo"
                   className="w-full rounded-lg shadow-lg"
                 />
                 <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 glass-slide p-3 sm:p-4 shadow-xl">
                   <div className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 sm:w-5 h-4 sm:h-5 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 sm:w-5 h-4 sm:h-5 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                     <div>

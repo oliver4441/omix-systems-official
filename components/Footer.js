@@ -1,9 +1,11 @@
 function Footer() {
   try {
+    const currentYear = new Date().getFullYear();
+
     return (
       <footer className="relative overflow-hidden" data-name="footer" data-file="components/Footer.js">
         <div className="absolute inset-0 opacity-25">
-          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="Kenya Map" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]"></div>
         </div>
         
@@ -31,8 +33,6 @@ function Footer() {
               <p className="text-sm md:text-base text-[var(--text-secondary)] mb-4 md:mb-6 leading-relaxed">
                 Building premium web applications and digital solutions for businesses worldwide.
               </p>
-              <div className="flex space-x-3">
-              </div>
             </div>
 
             <div className="glass-slide p-6 rounded-2xl" data-name="services-links" data-file="components/Footer.js">
@@ -49,7 +49,6 @@ function Footer() {
               <h4 className="font-semibold mb-4 text-[var(--text-primary)]">Company</h4>
               <ul className="space-y-2 text-sm md:text-base text-[var(--text-secondary)]">
                 <li><a href="#work" className="hover:text-[var(--accent-color)] transition-colors">Portfolio</a></li>
-                <li><a href="#pricing" className="hover:text-[var(--accent-color)] transition-colors">Pricing</a></li>
                 <li><a href="#contact" className="hover:text-[var(--accent-color)] transition-colors">Contact</a></li>
               </ul>
             </div>
@@ -58,16 +57,14 @@ function Footer() {
               <h4 className="font-semibold mb-4 text-[var(--text-primary)]">Contact</h4>
               <div className="space-y-2 text-sm md:text-base text-[var(--text-secondary)]">
                 <p><a href="mailto:omixsystems@gmail.com" className="hover:text-[var(--accent-color)] transition-colors">omixsystems@gmail.com</a></p>
-                <p>+254 732 649 442</p>
-                <a href="https://wa.me/0732649442" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 transition-colors block">
-                  WhatsApp: 0732649442
-                </a>
+                <p><a href="https://wa.me/254732649442" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 transition-colors">WhatsApp: +254 732 649 442</a></p>
+                <p>Kericho, Kenya</p>
               </div>
             </div>
           </div>
 
           <div className="glass-slide mt-8 md:mt-12 p-4 md:p-6 rounded-2xl text-center text-[var(--text-secondary)] text-sm md:text-base">
-            <p>&copy; 2026 <b>Omix</b>. All rights reserved. Full-Stack Web Development Agency.</p>
+            <p>&copy; {currentYear} <b>Omix</b>. All rights reserved. Full-Stack Web Development Agency.</p>
           </div>
         </div>
       </footer>
