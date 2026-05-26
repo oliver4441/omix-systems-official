@@ -1,32 +1,5 @@
 function Services() {
   try {
-    const portfolioItems = [
-      {
-        title: "Professional Services Website",
-        client: "Golden Source Agencies",
-        result: "Increased Bookings by 60%",
-        description: "Complete website with service listings, online booking, and contact forms. Client: Golden Source Agencies, Kericho.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        tech: ["React", "Mobile-First", "Contact Forms", "Booking System"]
-      },
-      {
-        title: "E-Commerce Platform",
-        client: "Regional Retail Brand",
-        result: "$50K+ Monthly Revenue",
-        description: "Full-featured online store with payment integration, inventory management, and analytics dashboard.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        tech: ["React", "Node.js", "Stripe", "PostgreSQL"]
-      },
-      {
-        title: "SaaS Dashboard",
-        client: "FinTech Startup",
-        result: "10,000+ Active Users",
-        description: "Real-time analytics platform with data visualization, user management, and API integrations.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        tech: ["TypeScript", "GraphQL", "AWS", "MongoDB"]
-      }
-    ];
-
     const techStack = [
       { name: "React", icon: "⚛️" },
       { name: "Node.js", icon: "🟢" },
@@ -187,49 +160,6 @@ function Services() {
           </div>
         </section>
 
-        <section id="work" className="section-padding relative overflow-hidden" data-name="portfolio-section" data-file="components/Services.js">
-          <div className="container relative z-10">
-            <div className="text-center mb-16">
-              <div className="inline-block px-4 py-2 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-6">
-                Our Work
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-                Real Results for <span className="text-[var(--secondary-color)]">Real Businesses</span>
-              </h2>
-            </div>
-            
-            <div className="flex flex-wrap gap-8 justify-center">
-              {portfolioItems.map((item, index) => (
-                <div 
-                  key={index} 
-                  className="glass-slide overflow-hidden hover-lift hover-scale transition-all duration-500 scroll-animate scale w-full md:w-[350px] flex-shrink-0" 
-                  style={{animationDelay: `${index * 0.15}s`}}
-                  data-name="portfolio-item" 
-                  data-file="components/Services.js"
-                >
-                  <div className="overflow-hidden">
-                    <img src={item.image} alt={item.title} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
-                  </div>
-                  <div className="p-6">
-                    <div className="inline-block px-3 py-1 glass-slide rounded-full text-[var(--accent-color)] text-sm font-medium mb-4">
-                      {item.result}
-                    </div>
-                    <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">{item.title}</h3>
-                    <p className="text-xs text-[var(--accent-color)] mb-3">Client: {item.client}</p>
-                    <p className="text-[var(--text-secondary)] mb-4">{item.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.tech.map((tech, techIndex) => (
-                        <span key={techIndex} className="px-3 py-1 glass-slide rounded-full text-xs text-[var(--text-secondary)]">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <section className="section-padding relative overflow-hidden" data-name="how-it-works-section" data-file="components/Services.js">
           <div className="absolute inset-0 opacity-25">
