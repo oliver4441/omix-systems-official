@@ -48,6 +48,9 @@ function Navigation() {
               <button onClick={() => scrollToSection('work')} className="text-sm lg:text-base text-[var(--text-primary)] hover:text-[var(--accent-color)] transition-colors">
                 Portfolio
               </button>
+              <button onClick={() => scrollToSection('pricing')} className="text-sm lg:text-base text-[var(--text-primary)] hover:text-[var(--accent-color)] transition-colors">
+                Pricing
+              </button>
               <button onClick={() => scrollToSection('contact')} className="btn btn-primary text-sm">
                 Get Started
               </button>
@@ -82,6 +85,9 @@ function Navigation() {
                 </button>
                 <button onClick={() => scrollToSection('work')} className="text-left text-[var(--text-primary)] hover:text-[var(--accent-color)] transition-colors py-2">
                   Portfolio
+                </button>
+                <button onClick={() => scrollToSection('pricing')} className="text-left text-[var(--text-primary)] hover:text-[var(--accent-color)] transition-colors py-2">
+                  Pricing
                 </button>
                 <button onClick={() => scrollToSection('contact')} className="text-left text-[var(--accent-color)] font-semibold py-2">
                   Get Started
