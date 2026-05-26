@@ -1,140 +1,116 @@
 function Hero() {
   try {
-    const [bgIndex, setBgIndex] = React.useState(0);
-    
-    const backgrounds = [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80', alt: 'Dashboard analytics on screen' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6da7d?w=1920&q=80', alt: 'Team collaborating on project' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80', alt: 'Modern workspace with laptops' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80', alt: 'Code on developer screen' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1920&q=80', alt: 'Design collaboration session' },
-      { type: 'image', src: 'https://images.unsplash.com/photo-1522071820081-009f3209d78b?w=1920&q=80', alt: 'Creative team working together' },
+    const features = [
+      { label: "7-Day Delivery", desc: "Fast turnaround, no excuses" },
+      { label: "Money-Back Guarantee", desc: "If you are not happy, we fix it" },
+      { label: "Free Revisions", desc: "Until you love the result" },
     ];
 
-    React.useEffect(() => {
-      const interval = setInterval(() => {
-        setBgIndex(prev => (prev + 1) % backgrounds.length);
-      }, 30 * 60 * 1000);
-      return () => clearInterval(interval);
-    }, []);
+    const stats = [
+      { value: "150+", label: "Projects" },
+      { value: "50+", label: "Clients" },
+      { value: "2x", label: "More Leads" },
+    ];
 
     const scrollToContact = (e) => {
       e.preventDefault();
-      const element = document.getElementById('contact');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      const el = document.getElementById("contact");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     };
 
-    const currentBg = backgrounds[bgIndex];
+    const scrollToServices = (e) => {
+      e.preventDefault();
+      const el = document.getElementById("services");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
-      <section id="home" className="min-h-screen bg-[var(--bg-dark)] flex items-center justify-center relative pt-16 sm:pt-20 lg:pt-24 overflow-hidden" data-name="hero-section" data-file="components/Hero.js">
-        <div className="absolute inset-0">
-          <img key={`img-${bgIndex}`} src={currentBg.src} alt={currentBg.alt} className="w-full h-full object-cover opacity-40 gpu-accelerated" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/70 via-[var(--bg-dark)]/50 to-[var(--bg-dark)]"></div>
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" data-name="hero" data-file="components/Hero.js">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#0f172a] to-[#0a0a1a]"></div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--secondary-color)] rounded-full blur-[128px] opacity-20"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--accent-color)] rounded-full blur-[128px] opacity-20"></div>
         </div>
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-64 sm:w-96 h-64 sm:h-96 bg-[var(--secondary-color)] rounded-full blur-3xl opacity-15 -top-32 sm:-top-48 -left-20 sm:-left-48"></div>
-          <div className="absolute w-64 sm:w-96 h-64 sm:h-96 bg-[var(--accent-color)] rounded-full blur-3xl opacity-15 -bottom-32 sm:-bottom-48 -right-20 sm:-right-48"></div>
-        </div>
-        
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center px-4">
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-bold mb-8 scroll-animate">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                Optimal Modular Integration Experts
-              </div>
-              
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight leading-[1.1] scroll-animate">
-                Building Modern{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                  SaaS Solutions
-                </span>{' '}
-                for Tomorrow's Businesses
-              </h1>
-              
-              <p className="text-lg md:text-xl text-slate-400 mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0 scroll-animate">
-                Transforming ideas into scalable digital products with our modular integration approach. Based in <span className="text-white font-bold underline decoration-blue-500/50">Kericho, Kenya</span> — Delivering global standards.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 scroll-animate">
-                <a href="#contact" onClick={scrollToContact} className="btn btn-primary cta-pulse group">
-                  Start Your Project
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                </a>
-                <a href="#work" className="btn btn-outline">
-                  View Our Work
-                </a>
-              </div>
-              
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mb-6">
-                <div className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm text-[var(--text-secondary)]">7-Day Delivery</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm text-[var(--text-secondary)]">Money-Back Guarantee</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-sm text-[var(--text-secondary)]">Free Revisions</span>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6">
-                <div className="glass-slide px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-center min-w-[90px] sm:min-w-[100px] stagger-item" style={{animationDelay: '0.1s'}}>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text-primary)] stats-animate">150+</div>
-                  <div className="text-xs sm:text-sm text-[var(--text-secondary)]">Projects</div>
-                </div>
-                <div className="glass-slide px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-center min-w-[90px] sm:min-w-[100px] stagger-item" style={{animationDelay: '0.2s'}}>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text-primary)] stats-animate">50+</div>
-                  <div className="text-xs sm:text-sm text-[var(--text-secondary)]">Clients</div>
-                </div>
-                <div className="glass-slide px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-center min-w-[90px] sm:min-w-[100px] stagger-item" style={{animationDelay: '0.3s'}}>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text-primary)] stats-animate">2x</div>
-                  <div className="text-xs sm:text-sm text-[var(--text-secondary)]">More Leads</div>
-                </div>
-              </div>
+
+        <div className="container relative z-10 py-12 md:py-20">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              Optimal Modular Integration Experts
             </div>
-            
-            <div className="relative hidden lg:block" data-name="hero-visual" data-file="components/Hero.js">
-              <div className="relative glass-slide p-4 sm:p-6 md:p-8 shadow-2xl rounded-2xl">
-                <img 
-                  src="favicon.png"
-                  alt="omixsystems logo"
-                  className="w-full rounded-lg shadow-lg"
-                />
-                <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 glass-slide p-3 sm:p-4 shadow-xl">
-                  <div className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 sm:w-5 h-4 sm:h-5 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--text-primary)]">
+              Building Modern{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                SaaS Solutions
+              </span>{" "}
+              for Tomorrow's Businesses
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">
+              Transforming ideas into scalable digital products with our modular integration approach. Based in{" "}
+              <span className="text-white font-semibold">Kericho, Kenya</span> — delivering global standards.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a href="#contact" onClick={scrollToContact} className="btn btn-primary cta-pulse group text-lg">
+                Start Your Project
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <a href="#services" onClick={scrollToServices} className="btn btn-outline text-lg">
+                View Services
+              </a>
+            </div>
+
+            {/* Features */}
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-12">
+              {features.map((f, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
-                    <div>
-                      <div className="text-xs sm:text-sm text-[var(--text-secondary)]">Conversions</div>
-                      <div className="text-lg sm:text-xl font-bold text-[var(--text-primary)]">+40%</div>
-                    </div>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm font-semibold text-[var(--text-primary)]">{f.label}</div>
+                    <div className="text-xs text-[var(--text-secondary)]">{f.desc}</div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
+
+            {/* Stats */}
+            <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+              {stats.map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">{s.value}</div>
+                  <div className="text-sm text-[var(--text-secondary)] mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          <span className="text-xs text-[var(--text-secondary)]">Scroll to explore</span>
+          <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
+            <div className="w-1 h-2 rounded-full bg-white/40 animate-bounce"></div>
           </div>
         </div>
       </section>
     );
   } catch (error) {
-    console.error('Hero component error:', error);
+    console.error("Hero component error:", error);
     return null;
   }
 }
