@@ -1,3 +1,5 @@
+import LazyImg from './LazyImg.js';
+
 function About() {
   try {
     const values = [
@@ -72,7 +74,7 @@ function About() {
         {/* How It Works */}
         <section className="page-section relative overflow-hidden" data-name="how-it-works" data-file="components/About.js">
           <div className="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover opacity-10" />
+            <LazyImg src="assets/how-bg.jpg" alt="" role="presentation" className="w-full h-full object-cover opacity-15" />
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">

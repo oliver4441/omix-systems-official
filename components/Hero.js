@@ -1,3 +1,5 @@
+import LazyImg from './LazyImg.js';
+
 function Hero() {
   try {
     const features = [
@@ -26,11 +28,14 @@ function Hero() {
 
     return (
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" data-name="hero" data-file="components/Hero.js">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a1a] via-[#0f172a] to-[#0a0a1a]"></div>
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--secondary-color)] rounded-full blur-[128px] opacity-20"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--accent-color)] rounded-full blur-[128px] opacity-20"></div>
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <LazyImg src="assets/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1a]/90 via-[#0a0a1a]/80 to-[#0a0a1a]"></div>
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--secondary-color)] rounded-full blur-[128px] opacity-10"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--accent-color)] rounded-full blur-[128px] opacity-10"></div>
+          </div>
         </div>
 
         <div className="container relative z-10 py-12 md:py-20">

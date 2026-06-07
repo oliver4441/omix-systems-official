@@ -1,3 +1,5 @@
+import LazyImg from './LazyImg.js';
+
 function Pricing() {
   try {
     const plans = [
@@ -123,7 +125,7 @@ function Pricing() {
         {/* FAQ */}
         <section className="page-section relative overflow-hidden" data-name="faq" data-file="components/Pricing.js">
           <div className="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover opacity-10" />
+            <LazyImg src="assets/pricing-bg.jpg" alt="" role="presentation" className="w-full h-full object-cover opacity-15" />
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">

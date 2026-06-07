@@ -1,3 +1,5 @@
+import LazyImg from './LazyImg.js';
+
 function Services() {
   try {
     const services = [
@@ -44,9 +46,10 @@ function Services() {
     ];
 
     const projects = [
-      { name: "omixh2", desc: "Full-featured School Management Platform — managing students, staff, exams, and financials.", url: "https://omix-h2.onrender.com/", tags: ["School Management", "Admin Portal", "Data Systems"] },
-      { name: "Fairytale", desc: "Project tracking app for teams — manage tasks, milestones, and progress.", url: "https://omnianalytics.vercel.app/", tags: ["Task Tracking", "Team Collaboration", "Analytics"] },
-      { name: "Kora Hub", desc: "Learn web development from scratch — interactive courses, hands-on projects.", url: "https://kora-ivory.vercel.app", tags: ["Web Dev Courses", "Interactive Learning", "Community"] },
+      { name: "omixh2", desc: "Full-featured School Management Platform — managing students, staff, exams, and financials.", url: "https://omix-h2.onrender.com/", tags: ["School Management", "Admin Portal", "Data Systems"], img: "assets/project-code.jpg" },
+      { name: "Fairytale", desc: "Project tracking app for teams — manage tasks, milestones, and progress.", url: "https://omnianalytics.vercel.app/", tags: ["Task Tracking", "Team Collaboration", "Analytics"], img: "assets/project-analytics.jpg" },
+      { name: "Kora Hub", desc: "Learn web development from scratch — interactive courses, hands-on projects.", url: "https://kora-ivory.vercel.app", tags: ["Web Dev Courses", "Interactive Learning", "Community"], img: "assets/project-laptop.jpg" },
+      { name: "Omix Store", desc: "Buy and sell in Kericho — a local marketplace connecting buyers and sellers in the community.", url: "https://stor1-web.onrender.com", tags: ["E-Commerce", "Local Marketplace", "Kericho"], img: "assets/project-store.jpg" },
     ];
 
     return (
@@ -112,7 +115,7 @@ function Services() {
         {/* Internal Projects */}
         <section className="page-section relative overflow-hidden" data-name="projects" data-file="components/Services.js">
           <div className="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1920&q=80" alt="" role="presentation" className="w-full h-full object-cover opacity-10" />
+            <LazyImg src="assets/lab-bg.jpg" alt="" role="presentation" className="w-full h-full object-cover opacity-15" />
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">
@@ -125,9 +128,14 @@ function Services() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {projects.map((p, i) => (
-                <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="glass-card p-6 hover-lift transition-all duration-300 group block">
+                <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="glass-card hover-lift transition-all duration-300 group block overflow-hidden">
+                  <div className="relative h-40 overflow-hidden">
+                    <LazyImg src={p.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
+                  </div>
+                  <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-color)] transition-colors">{p.name}</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[var(--accent-color)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -139,6 +147,7 @@ function Services() {
                     {p.tags.map((tag, ti) => (
                       <span key={ti} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-[var(--text-secondary)]">{tag}</span>
                     ))}
+                  </div>
                   </div>
                 </a>
               ))}
