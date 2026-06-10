@@ -1,5 +1,3 @@
-import LazyImg from './LazyImg.js';
-
 function About() {
   try {
     const values = [

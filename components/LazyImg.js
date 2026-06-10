@@ -11,5 +11,3 @@ function LazyImg({ src, alt, className = "" }) {
     />
   );
 }
-
-export default LazyImg;

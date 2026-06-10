@@ -1,5 +1,3 @@
-import LazyImg from './LazyImg.js';
-
 function Hero() {
   try {
     const features = [
