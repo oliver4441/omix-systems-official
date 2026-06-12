@@ -3,7 +3,7 @@ function Pricing() {
     const plans = [
       {
         name: "Starter Website",
-        price: "25,000",
+        price: "2,100",
         note: "one-time",
         desc: "Perfect for small businesses getting online for the first time.",
         features: ["Up to 5 pages", "Mobile responsive design", "Contact form", "Google Maps integration", "Basic SEO setup", "2 rounds of revisions"],
@@ -11,7 +11,7 @@ function Pricing() {
       },
       {
         name: "Business Website",
-        price: "45,000",
+        price: "2,500",
         note: "one-time",
         desc: "For growing businesses that need more than a basic site.",
         features: ["Up to 10 pages", "Custom design + branding", "Blog section", "Social media integration", "Booking / inquiry system", "Lighthouse 90+ performance", "30-day post-launch support", "SEO foundation with schema"],
@@ -19,7 +19,7 @@ function Pricing() {
       },
       {
         name: "E-Commerce Store",
-        price: "80,000",
+        price: "5,000",
         note: "from",
         desc: "A full online store built to sell and scale.",
         features: ["Custom product catalogue", "M-Pesa + card payments", "Inventory management", "Customer accounts", "Order notifications", "SEO-optimised product pages", "60-day post-launch support"],
@@ -27,7 +27,7 @@ function Pricing() {
       },
       {
         name: "Custom / SaaS",
-        price: "150,000",
+        price: "8,000",
         note: "from",
         desc: "Bespoke web applications, dashboards, and platforms.",
         features: ["Custom architecture", "API integrations", "User management", "Subscription billing", "Admin dashboard", "Scalable cloud hosting", "Dedicated project manager", "Ongoing support available"],
@@ -55,7 +55,7 @@ function Pricing() {
         <section id="pricing" className="page-section relative overflow-hidden" data-name="pricing" data-file="components/Pricing.js">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0f172a] to-[var(--bg-dark)]"></div>
           <div className="container relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
               <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
                 Pricing
               </div>
@@ -71,7 +71,8 @@ function Pricing() {
               {plans.map((plan, i) => (
                 <div
                   key={i}
-                  className={"glass-card p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 hover-lift" + (plan.highlighted ? " border border-[var(--accent-color)]/50 shadow-lg shadow-blue-500/10" : "")}
+                  className={"reveal glass-card p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 hover-lift" + (plan.highlighted ? " border border-[var(--accent-color)]/50 shadow-lg shadow-blue-500/10" : "")}
+                  style={{transitionDelay: (i * 0.1) + 's'}}
                 >
                   {plan.highlighted && (
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)]"></div>
@@ -106,7 +107,7 @@ function Pricing() {
             </div>
 
             {/* Add-ons */}
-            <div className="max-w-3xl mx-auto glass-card p-6 md:p-8 mb-20">
+            <div className="reveal max-w-3xl mx-auto glass-card p-6 md:p-8 mb-20">
               <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6 text-center">Add-on Services</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {addons.map((a, i) => (
@@ -127,14 +128,14 @@ function Pricing() {
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
               <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
                 Frequently Asked <span className="text-[var(--secondary-color)]">Questions</span>
               </h2>
             </div>
             <div className="max-w-3xl mx-auto space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="glass-card p-6">
+                <div key={i} className="reveal glass-card p-6 hover:border-[var(--accent-color)]/30 transition-colors duration-300" style={{transitionDelay: (i * 0.08) + 's'}}>
                   <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{faq.q}</h3>
                   <p className="text-[var(--text-secondary)] leading-relaxed">{faq.a}</p>
                 </div>

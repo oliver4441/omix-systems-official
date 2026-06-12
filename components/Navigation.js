@@ -93,7 +93,7 @@ function Navigation() {
           </div>
 
           {isMenuOpen && (
-            <div className="lg:hidden pb-4 border-t border-white/5 mt-2 pt-4">
+            <div className="lg:hidden pb-4 border-t border-white/5 mt-2 pt-4 hero-anim" style={{animationDuration: '0.3s'}}>
               <div className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <button

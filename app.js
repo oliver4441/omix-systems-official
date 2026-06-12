@@ -30,6 +30,22 @@ class ErrorBoundary extends React.Component {
 
 function App() {
   try {
+    React.useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      const elements = document.querySelectorAll('.reveal, .reveal-scale');
+      elements.forEach((el) => observer.observe(el));
+
+      return () => observer.disconnect();
+    }, []);
+
     return (
       <div className="min-h-screen bg-[var(--bg-dark)] relative overflow-hidden" data-name="omix-app" data-file="app.js">
         <div className="relative z-20">

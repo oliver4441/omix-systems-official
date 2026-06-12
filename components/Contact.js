@@ -55,7 +55,7 @@ function Contact() {
       <section id="contact" className="page-section relative overflow-hidden" data-name="contact" data-file="components/Contact.js">
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0f172a] to-[var(--bg-dark)]"></div>
         <div className="container relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 reveal">
             <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
               Get In Touch
             </div>
@@ -69,12 +69,12 @@ function Contact() {
 
           <div className="grid lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
             {/* Contact Info */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="reveal lg:col-span-2 space-y-6">
               <div className="glass-card p-6">
                 <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">Contact Info</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
@@ -85,7 +85,7 @@ function Contact() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
@@ -126,7 +126,7 @@ function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-3">
+            <div className="reveal lg:col-span-3" style={{transitionDelay: '0.1s'}}>
               <div className="glass-card rounded-2xl p-6 md:p-8">
                 {/* Step indicator */}
                 <div className="flex justify-center mb-8 gap-2">

@@ -56,7 +56,7 @@ function Services() {
         <section id="services" className="page-section relative overflow-hidden" data-name="services" data-file="components/Services.js">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0a0a1a] to-[var(--bg-dark)]"></div>
           <div className="container relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
               <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
                 Our Services
               </div>
@@ -71,8 +71,8 @@ function Services() {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-20">
               {services.map((service, i) => (
-                <div key={i} className="glass-card p-6 md:p-8 hover-lift transition-all duration-300 group">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--secondary-color)] to-[var(--accent-color)] flex items-center justify-center mb-5 text-white group-hover:scale-110 transition-transform">
+                <div key={i} className="reveal glass-card p-6 md:p-8 hover-lift transition-all duration-300 group" style={{transitionDelay: (i * 0.1) + 's'}}>
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--secondary-color)] to-[var(--accent-color)] flex items-center justify-center mb-5 text-white group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                     {service.icon}
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] mb-3">{service.title}</h3>
@@ -92,7 +92,7 @@ function Services() {
             </div>
 
             {/* Who this is for */}
-            <div className="max-w-4xl mx-auto glass-card p-6 md:p-8 mb-20">
+            <div className="reveal max-w-4xl mx-auto glass-card p-6 md:p-8 mb-20">
               <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6 text-center">Who This Is For</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
@@ -117,7 +117,7 @@ function Services() {
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
               <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
                 Our <span className="text-[var(--secondary-color)]">Innovation Lab</span>
               </h2>
@@ -128,7 +128,7 @@ function Services() {
 
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {projects.map((p, i) => (
-                <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="glass-card hover-lift transition-all duration-300 group block overflow-hidden">
+                <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="reveal glass-card hover-lift transition-all duration-300 group block overflow-hidden" style={{transitionDelay: (i * 0.1) + 's'}}>
                   <div className="relative h-40 overflow-hidden">
                     <LazyImg src={p.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
