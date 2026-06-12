@@ -32,7 +32,6 @@ function App() {
   try {
     return (
       <div className="min-h-screen bg-[var(--bg-dark)] relative overflow-hidden" data-name="omix-app" data-file="app.js">
-        <Preloader />
         <div className="relative z-20">
           <Navigation />
           <Hero />
