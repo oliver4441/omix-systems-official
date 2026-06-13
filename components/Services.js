@@ -44,7 +44,6 @@ function Services() {
     ];
 
     const projects = [
-      { name: "omixh2", desc: "Full-featured School Management Platform — managing students, staff, exams, and financials.", url: "https://omix-h2.onrender.com/", tags: ["School Management", "Admin Portal", "Data Systems"], img: "assets/project-code.jpg" },
       { name: "Fairytale", desc: "Project tracking app for teams — manage tasks, milestones, and progress.", url: "https://omnianalytics.vercel.app/", tags: ["Task Tracking", "Team Collaboration", "Analytics"], img: "assets/project-analytics.jpg" },
       { name: "Kora Hub", desc: "Learn web development from scratch — interactive courses, hands-on projects.", url: "https://kora-ivory.vercel.app", tags: ["Web Dev Courses", "Interactive Learning", "Community"], img: "assets/project-laptop.jpg" },
       { name: "Omix Store", desc: "Buy and sell in Kericho — a local marketplace connecting buyers and sellers in the community.", url: "https://stor1-web.onrender.com", tags: ["E-Commerce", "Local Marketplace", "Kericho"], img: "assets/project-store.jpg" },
@@ -55,6 +54,10 @@ function Services() {
         {/* Services Page */}
         <section id="services" className="page-section relative overflow-hidden" data-name="services" data-file="components/Services.js">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0a0a1a] to-[var(--bg-dark)]"></div>
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="float-blob-a absolute top-1/3 -left-20 w-80 h-80 bg-[var(--secondary-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
+            <div className="float-blob-b absolute bottom-0 -right-20 w-96 h-96 bg-[var(--accent-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
+          </div>
           <div className="container relative z-10">
             <div className="text-center mb-16 reveal">
               <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
@@ -113,7 +116,7 @@ function Services() {
         {/* Internal Projects */}
         <section className="page-section relative overflow-hidden" data-name="projects" data-file="components/Services.js">
           <div className="absolute inset-0">
-            <LazyImg src="assets/lab-bg.jpg" alt="" role="presentation" className="w-full h-full object-cover opacity-15" />
+            <ParallaxBg src="assets/lab-bg.jpg" speed={0.18} className="opacity-15" />
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">
@@ -126,9 +129,17 @@ function Services() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {projects.map((p, i) => (
-                <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="reveal glass-card hover-lift transition-all duration-300 group block overflow-hidden" style={{transitionDelay: (i * 0.1) + 's'}}>
+                <TiltCard
+                  key={i}
+                  as="a"
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="reveal glass-card hover-lift transition-all duration-300 group block overflow-hidden"
+                  style={{transitionDelay: (i * 0.1) + 's'}}
+                >
                   <div className="relative h-40 overflow-hidden">
                     <LazyImg src={p.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
@@ -147,7 +158,7 @@ function Services() {
                     ))}
                   </div>
                   </div>
-                </a>
+                </TiltCard>
               ))}
             </div>
           </div>

@@ -28,7 +28,7 @@ function Hero() {
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" data-name="hero" data-file="components/Hero.js">
         {/* Background image */}
         <div className="absolute inset-0">
-          <LazyImg src="assets/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
+          <ParallaxBg src="assets/hero-bg.jpg" speed={0.2} />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1a]/90 via-[#0a0a1a]/80 to-[#0a0a1a]"></div>
           <div className="absolute inset-0">
             <div className="float-blob-a absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--secondary-color)] rounded-full blur-[128px] opacity-10"></div>

@@ -30,6 +30,10 @@ function About() {
         {/* About Section */}
         <section id="about" className="page-section relative overflow-hidden" data-name="about" data-file="components/About.js">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0f172a] to-[var(--bg-dark)]"></div>
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="float-blob-a absolute top-10 right-0 w-80 h-80 bg-[var(--secondary-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
+            <div className="float-blob-b absolute bottom-10 -left-10 w-72 h-72 bg-[var(--accent-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
+          </div>
           <div className="container relative z-10">
             <div className="text-center mb-16 reveal">
               <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
@@ -72,7 +76,7 @@ function About() {
         {/* How It Works */}
         <section className="page-section relative overflow-hidden" data-name="how-it-works" data-file="components/About.js">
           <div className="absolute inset-0">
-            <LazyImg src="assets/how-bg.jpg" alt="" role="presentation" className="w-full h-full object-cover opacity-15" />
+            <ParallaxBg src="assets/how-bg.jpg" speed={-0.15} className="opacity-15" />
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/85 to-[var(--bg-dark)]/90"></div>
           </div>
           <div className="container relative z-10">
