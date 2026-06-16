@@ -7,7 +7,7 @@ function Navigation() {
     React.useEffect(() => {
       const handleScroll = () => {
         setIsScrolled(window.scrollY > 50);
-        const sections = ["home", "about", "services", "pricing", "contact"];
+        const sections = ["home", "about", "services", "blog", "pricing", "contact"];
         for (let i = sections.length - 1; i >= 0; i--) {
           const el = document.getElementById(sections[i]);
           if (el && window.scrollY >= el.offsetTop - 100) {
@@ -32,6 +32,7 @@ function Navigation() {
       { id: "home", label: "Home" },
       { id: "about", label: "About" },
       { id: "services", label: "Services" },
+      { id: "blog", label: "Insights" },
       { id: "pricing", label: "Pricing" },
       { id: "contact", label: "Contact" },
     ];

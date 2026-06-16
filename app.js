@@ -53,6 +53,7 @@ function App() {
           <Hero />
           <About />
           <Services />
+          <Blog />
           <Pricing />
           <Contact />
           <Footer />

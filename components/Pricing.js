@@ -3,7 +3,7 @@ function Pricing() {
     const plans = [
       {
         name: "Starter Website",
-        price: "2,100",
+        price: 2100,
         note: "one-time",
         desc: "Perfect for small businesses getting online for the first time.",
         features: ["Up to 5 pages", "Mobile responsive design", "Contact form", "Google Maps integration", "Basic SEO setup", "2 rounds of revisions"],
@@ -11,15 +11,17 @@ function Pricing() {
       },
       {
         name: "Business Website",
-        price: "2,500",
+        price: 2500,
         note: "one-time",
         desc: "For growing businesses that need more than a basic site.",
         features: ["Up to 10 pages", "Custom design + branding", "Blog section", "Social media integration", "Booking / inquiry system", "Lighthouse 90+ performance", "30-day post-launch support", "SEO foundation with schema"],
         highlighted: true,
+        badge: "Popular",
+        badgeClass: "bg-[var(--accent-color)]/20 text-[var(--accent-color)]",
       },
       {
         name: "E-Commerce Store",
-        price: "5,000",
+        price: 5000,
         note: "from",
         desc: "A full online store built to sell and scale.",
         features: ["Custom product catalogue", "M-Pesa + card payments", "Inventory management", "Customer accounts", "Order notifications", "SEO-optimised product pages", "60-day post-launch support"],
@@ -27,20 +29,48 @@ function Pricing() {
       },
       {
         name: "Custom / SaaS",
-        price: "8,000",
+        price: 8000,
         note: "from",
         desc: "Bespoke web applications, dashboards, and platforms.",
         features: ["Custom architecture", "API integrations", "User management", "Subscription billing", "Admin dashboard", "Scalable cloud hosting", "Dedicated project manager", "Ongoing support available"],
         highlighted: false,
       },
+      {
+        name: "Web App — Pay on Satisfaction",
+        price: 8000,
+        note: "from",
+        desc: "We build your custom web app first. You only pay once you're fully satisfied with the result — zero risk to you.",
+        features: ["Custom web app built to spec", "Live demo before any payment", "Pay KES 8,000 only when happy", "Unlimited revisions until approved", "Full source code handover", "Basic deployment included"],
+        highlighted: false,
+        badge: "Risk-Free",
+        badgeClass: "bg-green-500/20 text-green-400",
+      },
     ];
 
     const addons = [
-      { service: "Website maintenance", price: "5,000 – 10,000 / month" },
-      { service: "SEO optimisation", price: "15,000 – 30,000 / month" },
-      { service: "Content updates", price: "3,000 – 5,000 / update" },
-      { service: "Hosting + domain management", price: "2,000 – 5,000 / month" },
+      { service: "Website maintenance", low: 5000, high: 10000, unit: "/ month" },
+      { service: "SEO optimisation", low: 15000, high: 30000, unit: "/ month" },
+      { service: "Content updates", low: 3000, high: 5000, unit: "/ update" },
+      { service: "Hosting + domain management", low: 2000, high: 5000, unit: "/ month" },
     ];
+
+    const [currency, setCurrency] = React.useState("KES");
+    const USD_RATE = 130; // approximate KES per USD
+
+    const formatAmount = (kes) => {
+      if (currency === "USD") {
+        return "$" + Math.round(kes / USD_RATE).toLocaleString();
+      }
+      return "KES " + kes.toLocaleString();
+    };
+
+    const formatAmountPlain = (kes) => {
+      if (currency === "USD") {
+        return "$" + Math.round(kes / USD_RATE).toLocaleString();
+      }
+      return kes.toLocaleString();
+    };
+
 
     const faqs = [
       { q: "How long does it take to build a website?", a: "Most projects are completed within 7-14 days depending on complexity. Starter packages take 5-7 days, while more complex projects may take 2-3 weeks." },
@@ -66,30 +96,45 @@ function Pricing() {
               <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
                 Transparent <span className="text-[var(--secondary-color)]">Pricing</span>
               </h2>
-              <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
+              <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">
                 No hidden fees. No surprises. Pay once, own it forever.
               </p>
+              <div className="inline-flex items-center gap-1 p-1 bg-white/5 border border-white/10 rounded-full">
+                {["KES", "USD"].map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => setCurrency(c)}
+                    className={"px-4 py-1.5 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer " +
+                      (currency === c ? "bg-[var(--accent-color)] text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]")}
+                    aria-pressed={currency === c}
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
+              {currency === "USD" && (
+                <p className="text-xs text-[var(--text-secondary)] mt-3">Approximate conversion. Payment is processed in KES.</p>
+              )}
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto mb-16">
               {plans.map((plan, i) => (
                 <div
                   key={i}
-                  className={"reveal glass-card p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 hover-lift" + (plan.highlighted ? " border border-[var(--accent-color)]/50 shadow-lg shadow-blue-500/10" : "")}
+                  className={"reveal glass-card p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 hover-lift w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]" + (plan.highlighted ? " border border-[var(--accent-color)]/50 shadow-lg shadow-blue-500/10" : "")}
                   style={{transitionDelay: (i * 0.1) + 's'}}
                 >
                   {plan.highlighted && (
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)]"></div>
                   )}
-                  {plan.highlighted && (
-                    <div className="absolute top-4 right-4 px-2 py-0.5 bg-[var(--accent-color)]/20 text-[var(--accent-color)] text-xs font-bold rounded-full">
-                      Popular
+                  {plan.badge && (
+                    <div className={"absolute top-4 right-4 px-2 py-0.5 text-xs font-bold rounded-full " + plan.badgeClass}>
+                      {plan.badge}
                     </div>
                   )}
-                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-1">{plan.name}</h3>
+                  <h3 className="text-lg font-bold text-[var(--text-primary)] mb-1 pr-20">{plan.name}</h3>
                   <div className="mb-3">
-                    <span className="text-sm text-[var(--text-secondary)]">KES </span>
-                    <span className="text-3xl font-bold text-[var(--text-primary)]">{plan.price}</span>
+                    <span className="text-3xl font-bold text-[var(--text-primary)]">{formatAmount(plan.price)}</span>
                     <span className="text-sm text-[var(--text-secondary)] ml-1">{plan.note}</span>
                   </div>
                   <p className="text-sm text-[var(--text-secondary)] mb-5 leading-relaxed">{plan.desc}</p>
@@ -117,7 +162,7 @@ function Pricing() {
                 {addons.map((a, i) => (
                   <div key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/5">
                     <span className="text-sm text-[var(--text-secondary)]">{a.service}</span>
-                    <span className="text-sm font-semibold text-[var(--text-primary)]">KES {a.price}</span>
+                    <span className="text-sm font-semibold text-[var(--text-primary)]">{formatAmountPlain(a.low)} – {formatAmount(a.high)} {a.unit}</span>
                   </div>
                 ))}
               </div>

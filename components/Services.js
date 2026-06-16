@@ -1,5 +1,14 @@
 function Services() {
   try {
+    const [activeCaseStudy, setActiveCaseStudy] = React.useState(null);
+
+    React.useEffect(() => {
+      if (activeCaseStudy === null) return;
+      const onKey = (e) => { if (e.key === "Escape") setActiveCaseStudy(null); };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [activeCaseStudy]);
+
     const services = [
       {
         title: "SaaS Platform Development",
@@ -44,9 +53,42 @@ function Services() {
     ];
 
     const projects = [
-      { name: "Fairytale", desc: "Project tracking app for teams — manage tasks, milestones, and progress.", url: "https://omnianalytics.vercel.app/", tags: ["Task Tracking", "Team Collaboration", "Analytics"], img: "assets/project-analytics.jpg" },
-      { name: "Kora Hub", desc: "Learn web development from scratch — interactive courses, hands-on projects.", url: "https://kora-ivory.vercel.app", tags: ["Web Dev Courses", "Interactive Learning", "Community"], img: "assets/project-laptop.jpg" },
-      { name: "Omix Store", desc: "Buy and sell in Kericho — a local marketplace connecting buyers and sellers in the community.", url: "https://stor1-web.onrender.com", tags: ["E-Commerce", "Local Marketplace", "Kericho"], img: "assets/project-store.jpg" },
+      {
+        name: "Fairytale",
+        desc: "Project tracking app for teams — manage tasks, milestones, and progress.",
+        url: "https://omnianalytics.vercel.app/",
+        tags: ["Task Tracking", "Team Collaboration", "Analytics"],
+        img: "assets/project-analytics.jpg",
+        caseStudy: {
+          problem: "Small teams were juggling tasks across chat apps, spreadsheets, and notes, making it hard to see overall project progress or who owned what.",
+          solution: "We built a centralized dashboard with task boards, milestone tracking, and progress analytics — giving every team member a single source of truth.",
+          result: "Teams get a clear, real-time view of project health, reducing missed deadlines and duplicated work.",
+        },
+      },
+      {
+        name: "Kora Hub",
+        desc: "Learn web development from scratch — interactive courses, hands-on projects.",
+        url: "https://kora-ivory.vercel.app",
+        tags: ["Web Dev Courses", "Interactive Learning", "Community"],
+        img: "assets/project-laptop.jpg",
+        caseStudy: {
+          problem: "Aspiring developers in Kenya often lack affordable, structured, hands-on learning paths into web development.",
+          solution: "We designed an interactive learning platform combining bite-sized lessons with real coding projects and a supportive community space.",
+          result: "Learners progress from zero to building real projects, with a clear, guided curriculum instead of scattered tutorials.",
+        },
+      },
+      {
+        name: "Omix Store",
+        desc: "Buy and sell in Kericho — a local marketplace connecting buyers and sellers in the community.",
+        url: "https://stor1-web.onrender.com",
+        tags: ["E-Commerce", "Local Marketplace", "Kericho"],
+        img: "assets/project-store.jpg",
+        caseStudy: {
+          problem: "Local sellers in Kericho relied on word-of-mouth and social media posts that got lost in busy feeds, making it hard for buyers to discover what was for sale.",
+          solution: "We built a simple, searchable marketplace where local sellers list products and buyers browse by category — a digital storefront for the community.",
+          result: "Sellers gain a permanent, organized online presence, and buyers can find local products in seconds.",
+        },
+      },
     ];
 
     return (
@@ -133,11 +175,8 @@ function Services() {
               {projects.map((p, i) => (
                 <TiltCard
                   key={i}
-                  as="a"
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="reveal glass-card hover-lift transition-all duration-300 group block overflow-hidden"
+                  as="div"
+                  className="reveal glass-card hover-lift transition-all duration-300 group overflow-hidden"
                   style={{transitionDelay: (i * 0.1) + 's'}}
                 >
                   <div className="relative h-40 overflow-hidden">
@@ -145,22 +184,86 @@ function Services() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
                   </div>
                   <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-color)] transition-colors">{p.name}</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[var(--accent-color)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </div>
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">{p.name}</h3>
                   <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">{p.desc}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {p.tags.map((tag, ti) => (
                       <span key={ti} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-[var(--text-secondary)]">{tag}</span>
                     ))}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => setActiveCaseStudy(i)}
+                      className="text-sm font-semibold text-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors cursor-pointer"
+                    >
+                      Case Study
+                    </button>
+                    <span className="text-white/10">|</span>
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
+                      Visit Site
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
                   </div>
                   </div>
                 </TiltCard>
               ))}
             </div>
+
+            {/* Case Study Modal */}
+            {activeCaseStudy !== null && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+                onClick={() => setActiveCaseStudy(null)}
+                role="dialog"
+                aria-modal="true"
+                aria-label={projects[activeCaseStudy].name + " case study"}
+              >
+                <div
+                  className="glass-card max-w-lg w-full p-6 md:p-8 relative max-h-[85vh] overflow-y-auto"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    onClick={() => setActiveCaseStudy(null)}
+                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors cursor-pointer"
+                    aria-label="Close case study"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-[var(--text-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                  <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-1 pr-10">{projects[activeCaseStudy].name}</h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {projects[activeCaseStudy].tags.map((tag, ti) => (
+                      <span key={ti} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-[var(--text-secondary)]">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="space-y-5">
+                    <div>
+                      <h4 className="text-sm font-bold uppercase tracking-wide text-[var(--secondary-color)] mb-2">The Problem</h4>
+                      <p className="text-[var(--text-secondary)] leading-relaxed">{projects[activeCaseStudy].caseStudy.problem}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold uppercase tracking-wide text-[var(--secondary-color)] mb-2">Our Solution</h4>
+                      <p className="text-[var(--text-secondary)] leading-relaxed">{projects[activeCaseStudy].caseStudy.solution}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold uppercase tracking-wide text-[var(--secondary-color)] mb-2">The Result</h4>
+                      <p className="text-[var(--text-secondary)] leading-relaxed">{projects[activeCaseStudy].caseStudy.result}</p>
+                    </div>
+                  </div>
+                  <a
+                    href={projects[activeCaseStudy].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary w-full text-center mt-6"
+                  >
+                    Visit Live Site
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </>

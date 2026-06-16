@@ -4,6 +4,8 @@ function Contact() {
     const [formData, setFormData] = React.useState({ name: "", email: "", business: "", service: "", message: "" });
     const [errors, setErrors] = React.useState({});
     const [isSubmitted, setIsSubmitted] = React.useState(false);
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [submitError, setSubmitError] = React.useState("");
 
     const handleInputChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,7 +26,28 @@ function Contact() {
 
     const nextStep = () => { if (validateStep(step)) setStep(step + 1); };
     const prevStep = () => setStep(step - 1);
-    const handleSubmit = (e) => { e.preventDefault(); if (validateStep(step)) setIsSubmitted(true); };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      if (!validateStep(step)) return;
+      setIsSubmitting(true);
+      setSubmitError("");
+      try {
+        const res = await fetch("https://formspree.io/f/xnjpvprl", {
+          method: "POST",
+          headers: { Accept: "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+        if (res.ok) {
+          setIsSubmitted(true);
+        } else {
+          setSubmitError("Something went wrong sending your message. Please try again or message us on WhatsApp.");
+        }
+      } catch (err) {
+        setSubmitError("Network error. Please check your connection or message us on WhatsApp.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
 
     const stepClass = (n) => "h-2 w-12 rounded-full transition-colors duration-300 " + (step >= n ? "bg-[var(--secondary-color)]" : "bg-white/10");
     const inputClass = (field) => "w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] transition-colors " + (errors[field] ? "border-red-500" : "border-white/10");
@@ -187,9 +210,12 @@ function Contact() {
                       <p className="text-sm text-[var(--text-secondary)] mb-4">Step 3 of 3</p>
                       <label htmlFor="c-message" className="sr-only">Your Message</label>
                       <textarea id="c-message" name="message" rows="5" placeholder="Tell us about your project..." value={formData.message} onChange={handleInputChange} className={inputClass("message") + " resize-none"}></textarea>
+                      {submitError && <p className="text-red-400 text-sm">{submitError}</p>}
                       <div className="flex gap-4">
-                        <button type="button" onClick={prevStep} className="btn btn-outline w-1/2">Back</button>
-                        <button type="submit" className="btn btn-primary w-1/2">Send Message</button>
+                        <button type="button" onClick={prevStep} disabled={isSubmitting} className="btn btn-outline w-1/2">Back</button>
+                        <button type="submit" disabled={isSubmitting} className="btn btn-primary w-1/2 disabled:opacity-60 disabled:cursor-not-allowed">
+                          {isSubmitting ? "Sending..." : "Send Message"}
+                        </button>
                       </div>
                     </div>
                   )}
