@@ -56,9 +56,9 @@ function Services() {
       {
         name: "Fairytale",
         desc: "Project tracking app for teams — manage tasks, milestones, and progress.",
-        url: "https://omnianalytics.vercel.app/",
+        url: "https://fairytale.omixsystems.store",
         tags: ["Task Tracking", "Team Collaboration", "Analytics"],
-        img: "assets/project-analytics.jpg",
+        img: "assets/project-laptop.jpg",
         caseStudy: {
           problem: "Small teams were juggling tasks across chat apps, spreadsheets, and notes, making it hard to see overall project progress or who owned what.",
           solution: "We built a centralized dashboard with task boards, milestone tracking, and progress analytics — giving every team member a single source of truth.",
@@ -66,27 +66,30 @@ function Services() {
         },
       },
       {
-        name: "Kora Hub",
-        desc: "Learn web development from scratch — interactive courses, hands-on projects.",
-        url: "https://kora-ivory.vercel.app",
-        tags: ["Web Dev Courses", "Interactive Learning", "Community"],
-        img: "assets/project-laptop.jpg",
+        name: "Omix Marketplace",
+        desc: "Buy and sell in Kericho — our flagship local marketplace connecting buyers and sellers in the community.",
+        url: "https://market.omixsystems.store",
+        tags: ["E-Commerce", "Local Marketplace", "Kericho"],
+        img: "assets/project-store.jpg",
+        badge: "Flagship",
         caseStudy: {
-          problem: "Aspiring developers in Kenya often lack affordable, structured, hands-on learning paths into web development.",
-          solution: "We designed an interactive learning platform combining bite-sized lessons with real coding projects and a supportive community space.",
-          result: "Learners progress from zero to building real projects, with a clear, guided curriculum instead of scattered tutorials.",
+          problem: "Local sellers in Kericho relied on word-of-mouth and social media posts that got lost in busy feeds, making it hard for buyers to discover what was for sale.",
+          solution: "We built a simple, searchable marketplace where local sellers list products and buyers browse by category — a digital storefront for the community, now live on its own domain as part of the Omix Systems product family.",
+          result: "Sellers gain a permanent, organized online presence, and buyers can find local products in seconds.",
         },
       },
       {
-        name: "Omix Store",
-        desc: "Buy and sell in Kericho — a local marketplace connecting buyers and sellers in the community.",
-        url: "https://stor1-web.onrender.com",
-        tags: ["E-Commerce", "Local Marketplace", "Kericho"],
-        img: "assets/project-store.jpg",
+        name: "SentienX",
+        desc: "All-in-one Deriv trading platform — automated bots, real-time analytics, and an affiliate program for traders.",
+        url: "https://sentienx.omixsystems.store",
+        tags: ["Trading Platform", "Automated Bots", "Affiliate Program"],
+        img: "assets/project-analytics.jpg",
+        badge: "New",
+        badgeClass: "bg-green-500/90",
         caseStudy: {
-          problem: "Local sellers in Kericho relied on word-of-mouth and social media posts that got lost in busy feeds, making it hard for buyers to discover what was for sale.",
-          solution: "We built a simple, searchable marketplace where local sellers list products and buyers browse by category — a digital storefront for the community.",
-          result: "Sellers gain a permanent, organized online presence, and buyers can find local products in seconds.",
+          problem: "Deriv traders were juggling disconnected tools — manual chart analysis, separate bot scripts, and no easy way to track affiliate earnings — making consistent, organized trading difficult.",
+          solution: "We built a unified workspace combining real-time charts, configurable automated trading bots, a structured trading academy, and bankroll tracking, with a built-in multi-tier affiliate and commission system powered by the Deriv API.",
+          result: "Traders get one platform to execute, learn, and track earnings in one place, while affiliates see commissions calculated automatically. As with all trading, results vary and capital is at risk.",
         },
       },
     ];
@@ -182,6 +185,11 @@ function Services() {
                   <div className="relative h-40 overflow-hidden">
                     <LazyImg src={p.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
+                    {p.badge && (
+                      <div className={"absolute top-3 right-3 px-2 py-0.5 text-white text-xs font-bold rounded-full " + (p.badgeClass || "bg-[var(--accent-color)]/90")}>
+                        {p.badge}
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                   <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">{p.name}</h3>

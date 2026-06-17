@@ -25,6 +25,56 @@
     <meta name="twitter:description" content="Building modern SaaS solutions and high-performance digital products for tomorrow's businesses.">
     <meta name="twitter:image" content="https://omixsystems.store/favicon.png">
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Omix Systems",
+        "alternateName": "omixsystems",
+        "url": "https://omixsystems.store/",
+        "logo": "https://omixsystems.store/favicon.png",
+        "description": "Optimal Modular Integration Experts building scalable SaaS platforms, high-converting websites, and modern mobile applications. Based in Kericho, Kenya.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kericho",
+            "addressCountry": "KE"
+        },
+        "subOrganization": [
+            {
+                "@type": "Organization",
+                "name": "Omix Marketplace",
+                "url": "https://market.omixsystems.store/",
+                "description": "E-commerce marketplace for buying and selling locally in Kericho, with M-Pesa payments built in.",
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "Omix Systems",
+                    "url": "https://omixsystems.store/"
+                }
+            }
+        ],
+        "owns": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "Omix Marketplace",
+                "url": "https://market.omixsystems.store/",
+                "applicationCategory": "ShoppingApplication"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Fairytale",
+                "url": "https://fairytale.omixsystems.store/",
+                "applicationCategory": "BusinessApplication"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "SentienX",
+                "url": "https://sentienx.omixsystems.store/",
+                "applicationCategory": "FinanceApplication"
+            }
+        ]
+    }
+    </script>
+
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
@@ -184,6 +234,7 @@
     <script type="text/babel" src="components/Hero.js"></script>
     <script type="text/babel" src="components/About.js"></script>
     <script type="text/babel" src="components/Services.js"></script>
+    <script type="text/babel" src="components/MarketplaceCTA.js"></script>
     <script type="text/babel" src="components/Blog.js"></script>
     <script type="text/babel" src="components/Pricing.js"></script>
     <script type="text/babel" src="components/Contact.js"></script>
