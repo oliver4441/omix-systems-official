@@ -53,7 +53,8 @@ function OurApps() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {/* Desktop grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {apps.map((app, i) => (
               <div
                 key={i}
@@ -84,6 +85,44 @@ function OurApps() {
                 </a>
               </div>
             ))}
+          </div>
+
+          {/* Mobile swipeable carousel */}
+          <div className="md:hidden reveal">
+            <Carousel
+              items={apps}
+              ariaLabel="Omix Systems apps"
+              renderItem={(app) => (
+                <div className="px-2">
+                  <div
+                    className={"glass-card p-6 flex flex-col relative overflow-hidden" + (app.highlighted ? " border border-[var(--accent-color)]/40 shadow-lg shadow-blue-500/10" : "")}
+                  >
+                    {app.highlighted && (
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--secondary-color)] to-[var(--accent-color)]"></div>
+                    )}
+                    {app.badge && (
+                      <div className={"absolute top-4 right-4 px-2 py-0.5 text-white text-xs font-bold rounded-full " + app.badgeClass}>
+                        {app.badge}
+                      </div>
+                    )}
+                    <h3 className="text-xl font-bold text-[var(--text-primary)] mb-1 pr-16">{app.name}</h3>
+                    <p className="text-sm font-medium text-[var(--secondary-color)] mb-4">{app.tagline}</p>
+                    <p className="text-sm text-[var(--text-secondary)] mb-6 leading-relaxed">{app.desc}</p>
+                    <a
+                      href={app.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={"btn w-full text-center text-sm group " + (app.highlighted ? "btn-primary" : "btn-outline")}
+                    >
+                      Explore {app.name}
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 inline-block ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              )}
+            />
           </div>
         </div>
       </section>

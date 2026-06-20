@@ -50,7 +50,7 @@ function Hero() {
             {/* Headline */}
             <h1 className="hero-anim text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--text-primary)]" style={{animationDelay: '0.15s'}}>
               Building Modern{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                 SaaS Solutions
               </span>{" "}
               for Tomorrow's Businesses

@@ -174,50 +174,53 @@ function Services() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {projects.map((p, i) => (
-                <TiltCard
-                  key={i}
-                  as="div"
-                  className="reveal glass-card hover-lift transition-all duration-300 group overflow-hidden"
-                  style={{transitionDelay: (i * 0.1) + 's'}}
-                >
-                  <div className="relative h-40 overflow-hidden">
-                    <LazyImg src={p.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
-                    {p.badge && (
-                      <div className={"absolute top-3 right-3 px-2 py-0.5 text-white text-xs font-bold rounded-full " + (p.badgeClass || "bg-[var(--accent-color)]/90")}>
-                        {p.badge}
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-6">
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">{p.name}</h3>
-                  <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">{p.desc}</p>
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {p.tags.map((tag, ti) => (
-                      <span key={ti} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-[var(--text-secondary)]">{tag}</span>
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => setActiveCaseStudy(i)}
-                      className="text-sm font-semibold text-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors cursor-pointer"
-                    >
-                      Case Study
-                    </button>
-                    <span className="text-white/10">|</span>
-                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                      Visit Site
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </div>
-                  </div>
-                </TiltCard>
-              ))}
-            </div>
+            <Carousel
+              items={projects}
+              ariaLabel="Innovation Lab projects"
+              className="max-w-2xl mx-auto reveal"
+              renderItem={(p, i) => (
+                <div className="px-2">
+                  <TiltCard
+                    as="div"
+                    className="glass-card hover-lift transition-all duration-300 group overflow-hidden"
+                  >
+                    <div className="relative h-48 md:h-56 overflow-hidden">
+                      <LazyImg src={p.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)] to-transparent"></div>
+                      {p.badge && (
+                        <div className={"absolute top-3 right-3 px-2 py-0.5 text-white text-xs font-bold rounded-full " + (p.badgeClass || "bg-[var(--accent-color)]/90")}>
+                          {p.badge}
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold text-[var(--text-primary)] mb-2">{p.name}</h3>
+                    <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">{p.desc}</p>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {p.tags.map((tag, ti) => (
+                        <span key={ti} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-[var(--text-secondary)]">{tag}</span>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() => setActiveCaseStudy(i)}
+                        className="text-sm font-semibold text-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors cursor-pointer"
+                      >
+                        Case Study
+                      </button>
+                      <span className="text-white/10">|</span>
+                      <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
+                        Visit Site
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                    </div>
+                  </TiltCard>
+                </div>
+              )}
+            />
 
             {/* Case Study Modal */}
             {activeCaseStudy !== null && (
