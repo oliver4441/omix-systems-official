@@ -49,17 +49,17 @@ function Contact() {
       }
     };
 
-    const stepClass = (n) => "h-2 w-12 rounded-full transition-colors duration-300 " + (step >= n ? "bg-[var(--secondary-color)]" : "bg-white/10");
-    const inputClass = (field) => "w-full px-4 py-3 bg-white/5 border rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] transition-colors " + (errors[field] ? "border-red-500" : "border-white/10");
+    const stepClass = (n) => "h-2 w-12 rounded-full transition-colors duration-300 " + (step >= n ? "bg-[var(--secondary-color)]" : "bg-slate-200/80");
+    const inputClass = (field) => "w-full px-4 py-3 bg-white border rounded-lg text-[var(--text-primary)] placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] transition-colors " + (errors[field] ? "border-red-500" : "border-slate-300");
 
     if (isSubmitted) {
       return (
         <section id="contact" className="page-section relative overflow-hidden" data-name="contact" data-file="components/Contact.js">
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0f172a] to-[var(--bg-dark)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[var(--bg-soft)] to-[var(--bg-dark)]"></div>
           <div className="container relative z-10">
             <div className="glass-card rounded-3xl p-8 md:p-12 text-center max-w-2xl mx-auto mt-20">
               <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -76,14 +76,14 @@ function Contact() {
 
     return (
       <section id="contact" className="page-section relative overflow-hidden" data-name="contact" data-file="components/Contact.js">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0f172a] to-[var(--bg-dark)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[var(--bg-soft)] to-[var(--bg-dark)]"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="float-blob-a absolute top-0 left-0 w-72 h-72 bg-[var(--secondary-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
           <div className="float-blob-b absolute bottom-0 right-1/4 w-80 h-80 bg-[var(--accent-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
         </div>
         <div className="container relative z-10">
           <div className="text-center mb-16 reveal">
-            <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
+            <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-700 text-sm font-medium mb-6">
               Get In Touch
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
@@ -101,7 +101,7 @@ function Contact() {
                 <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">Contact Info</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110">
+                    <div className="w-10 h-10 rounded-lg bg-slate-200/60 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
@@ -112,8 +112,8 @@ function Contact() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-10 h-10 rounded-lg bg-slate-200/60 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                     </div>
@@ -123,7 +123,7 @@ function Contact() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-slate-200/60 flex items-center justify-center flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -142,7 +142,7 @@ function Contact() {
                 <ul className="space-y-3">
                   {["7-day delivery guarantee", "Money-back guarantee", "Free revisions until you are happy", "50+ successful projects", "M-Pesa & bank transfer accepted"].map((item, i) => (
                     <li key={i} className="flex items-center text-sm text-[var(--text-secondary)]">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-green-700 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       {item}
@@ -189,12 +189,12 @@ function Contact() {
                       <div>
                         <label htmlFor="c-service" className="sr-only">Select Service</label>
                         <select id="c-service" name="service" value={formData.service} onChange={handleInputChange} className={inputClass("service")}>
-                          <option value="" className="bg-[#171717]">Select Service *</option>
-                          <option value="saas" className="bg-[#171717]">SaaS Platform Development</option>
-                          <option value="web" className="bg-[#171717]">Website Development</option>
-                          <option value="app" className="bg-[#171717]">Mobile App Development</option>
-                          <option value="api" className="bg-[#171717]">API Development</option>
-                          <option value="consultation" className="bg-[#171717]">Free Strategy Consultation</option>
+                          <option value="" className="bg-[var(--bg-dark)]">Select Service *</option>
+                          <option value="saas" className="bg-[var(--bg-dark)]">SaaS Platform Development</option>
+                          <option value="web" className="bg-[var(--bg-dark)]">Website Development</option>
+                          <option value="app" className="bg-[var(--bg-dark)]">Mobile App Development</option>
+                          <option value="api" className="bg-[var(--bg-dark)]">API Development</option>
+                          <option value="consultation" className="bg-[var(--bg-dark)]">Free Strategy Consultation</option>
                         </select>
                         {errors.service && <p className="text-red-400 text-sm mt-1">{errors.service}</p>}
                       </div>
