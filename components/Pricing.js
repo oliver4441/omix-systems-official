@@ -43,7 +43,7 @@ function Pricing() {
         features: ["Custom web app built to spec", "Live demo before any payment", "Pay KES 8,000 only when happy", "Unlimited revisions until approved", "Full source code handover", "Basic deployment included"],
         highlighted: false,
         badge: "Risk-Free",
-        badgeClass: "bg-green-500/20 text-green-400",
+        badgeClass: "bg-green-500/20 text-green-700",
       },
     ];
 
@@ -83,14 +83,14 @@ function Pricing() {
       <>
         {/* Pricing Page */}
         <section id="pricing" className="page-section relative overflow-hidden" data-name="pricing" data-file="components/Pricing.js">
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[#0f172a] to-[var(--bg-dark)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] via-[var(--bg-soft)] to-[var(--bg-dark)]"></div>
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="float-blob-a absolute -top-10 left-1/3 w-80 h-80 bg-[var(--accent-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
             <div className="float-blob-b absolute bottom-0 right-0 w-72 h-72 bg-[var(--secondary-color)] rounded-full blur-[120px] opacity-[0.06]"></div>
           </div>
           <div className="container relative z-10">
             <div className="text-center mb-16 reveal">
-              <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-6">
+              <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-700 text-sm font-medium mb-6">
                 Pricing
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
@@ -99,7 +99,7 @@ function Pricing() {
               <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">
                 No hidden fees. No surprises. Pay once, own it forever.
               </p>
-              <div className="inline-flex items-center gap-1 p-1 bg-white/5 border border-white/10 rounded-full">
+              <div className="inline-flex items-center gap-1 p-1 bg-slate-200/60 border border-slate-300 rounded-full">
                 {["KES", "USD"].map((c) => (
                   <button
                     key={c}
@@ -160,7 +160,7 @@ function Pricing() {
               <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6 text-center">Add-on Services</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {addons.map((a, i) => (
-                  <div key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/5">
+                  <div key={i} className="flex items-center justify-between p-4 bg-slate-200/60 rounded-xl border border-slate-200">
                     <span className="text-sm text-[var(--text-secondary)]">{a.service}</span>
                     <span className="text-sm font-semibold text-[var(--text-primary)]">{formatAmountPlain(a.low)} – {formatAmount(a.high)} {a.unit}</span>
                   </div>

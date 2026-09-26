@@ -3,8 +3,8 @@ function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-      <footer className="relative overflow-hidden border-t border-white/5" data-name="footer" data-file="components/Footer.js">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] to-[#0a0a1a]"></div>
+      <footer className="relative overflow-hidden border-t border-slate-200" data-name="footer" data-file="components/Footer.js">
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)] to-[var(--bg-dark)]"></div>
         <div className="container relative z-10 py-12">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-1">
@@ -47,14 +47,14 @@ function Footer() {
                   <a href="mailto:omixsystems@gmail.com" className="hover:text-[var(--accent-color)] transition-colors">omixsystems@gmail.com</a>
                 </p>
                 <p>
-                  <a href="https://wa.me/254732649442" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 transition-colors">WhatsApp: +254 732 649 442</a>
+                  <a href="https://wa.me/254732649442" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-green-300 transition-colors">WhatsApp: +254 732 649 442</a>
                 </p>
                 <p>Kericho, Kenya</p>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="border-t border-slate-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-[var(--text-secondary)]">
               &copy; {currentYear} <b className="text-[var(--text-primary)]">Omix</b>. All rights reserved. Full-Stack Web Development Agency.
             </p>

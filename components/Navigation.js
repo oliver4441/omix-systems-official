@@ -44,7 +44,7 @@ function Navigation() {
     ];
 
     const navClass = isScrolled ? "py-2 sm:py-3" : "py-3 sm:py-4";
-    const navBg = isScrolled ? "bg-[var(--bg-dark)]/95 backdrop-blur-xl shadow-lg shadow-black/20" : "bg-transparent";
+    const navBg = isScrolled ? "bg-[var(--bg-dark)]/95 backdrop-blur-xl shadow-lg shadow-slate-300/40" : "bg-[var(--bg-dark)]/95 backdrop-blur-xl";
 
     return (
       <nav className={"fixed top-0 w-full z-50 transition-all duration-300 " + navBg} data-name="navigation" data-file="components/Navigation.js" aria-label="Main navigation">
@@ -69,8 +69,8 @@ function Navigation() {
                   onClick={() => scrollToSection(item.id)}
                   className={"px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 " +
                     (activePage === item.id
-                      ? "text-[var(--accent-color)] bg-white/5"
-                      : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5")}
+                      ? "text-[var(--accent-color)] bg-slate-200/60"
+                      : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-200/60")}
                 >
                   {item.label}
                 </button>
@@ -78,7 +78,7 @@ function Navigation() {
               <div className="relative group">
                 <button
                   type="button"
-                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5 inline-flex items-center gap-1.5"
+                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-200/60 inline-flex items-center gap-1.5"
                   aria-haspopup="true"
                 >
                   Our Apps
@@ -93,7 +93,7 @@ function Navigation() {
                       href={app.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5 transition-colors"
+                      className="flex items-center justify-between px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-200/60 transition-colors"
                     >
                       {app.name}
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -112,10 +112,11 @@ function Navigation() {
             </div>
 
             <button
-              className="lg:hidden p-2 rounded-lg hover:bg-white/5 transition-colors"
+              className="lg:hidden p-3 rounded-lg hover:bg-slate-200/60 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[var(--text-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -128,7 +129,7 @@ function Navigation() {
           </div>
 
           {isMenuOpen && (
-            <div className="lg:hidden pb-4 border-t border-white/5 mt-2 pt-4 hero-anim" style={{animationDuration: '0.3s'}}>
+            <div id="mobile-menu" className="lg:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto pb-4 border-t border-slate-200 mt-2 pt-4 hero-anim" style={{animationDuration: '0.3s'}}>
               <div className="flex flex-col space-y-1">
                 {navItems.map((item) => (
                   <button
@@ -136,8 +137,8 @@ function Navigation() {
                     onClick={() => scrollToSection(item.id)}
                     className={"text-left px-4 py-3 rounded-lg text-sm font-medium transition-all " +
                       (activePage === item.id
-                        ? "text-[var(--accent-color)] bg-white/5"
-                        : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5")}
+                        ? "text-[var(--accent-color)] bg-slate-200/60"
+                        : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-200/60")}
                   >
                     {item.label}
                   </button>
@@ -151,7 +152,7 @@ function Navigation() {
                     href={app.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5 inline-flex items-center gap-1.5"
+                    className="px-4 py-2.5 rounded-lg text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-slate-200/60 inline-flex items-center gap-1.5"
                   >
                     {app.name}
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

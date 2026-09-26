@@ -29,17 +29,17 @@ function Hero() {
         {/* Background image */}
         <div className="absolute inset-0">
           <ParallaxBg src="assets/hero-bg.jpg" speed={0.2} />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1a]/90 via-[#0a0a1a]/80 to-[#0a0a1a]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-dark)]/90 via-[var(--bg-dark)]/95 to-[var(--bg-dark)]"></div>
           <div className="absolute inset-0">
-            <div className="float-blob-a absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--secondary-color)] rounded-full blur-[128px] opacity-10"></div>
-            <div className="float-blob-b absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--accent-color)] rounded-full blur-[128px] opacity-10"></div>
+            <div className="float-blob-a absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[var(--secondary-color)] rounded-full blur-[128px] opacity-10"></div>
+            <div className="float-blob-b absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[var(--accent-color)] rounded-full blur-[128px] opacity-10"></div>
           </div>
         </div>
 
         <div className="container relative z-10 py-12 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
-            <div className="hero-anim inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-8" style={{animationDelay: '0.05s'}}>
+            <div className="hero-anim inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-700 text-sm font-medium mb-8" style={{animationDelay: '0.05s'}}>
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -48,17 +48,17 @@ function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="hero-anim text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--text-primary)]" style={{animationDelay: '0.15s'}}>
+            <h1 className="hero-anim text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--text-primary)]" style={{animationDelay: '0.15s'}}>
               Building Modern{" "}
-              <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              <span className="italic font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600">
                 SaaS Solutions
               </span>{" "}
               for Tomorrow's Businesses
             </h1>
 
-            <p className="hero-anim text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" style={{animationDelay: '0.25s'}}>
+            <p className="hero-anim text-lg md:text-xl text-[var(--text-secondary)] mb-8 leading-relaxed max-w-2xl mx-auto" style={{animationDelay: '0.25s'}}>
               Transforming ideas into scalable digital products with our modular integration approach. Based in{" "}
-              <span className="text-white font-semibold">Kericho, Kenya</span> — delivering global standards.
+              <span className="text-[var(--text-primary)] font-semibold">Kericho, Kenya</span> — delivering global standards.
             </p>
 
             {/* CTAs */}
@@ -75,11 +75,11 @@ function Hero() {
             </div>
 
             {/* Features */}
-            <div className="hero-anim flex flex-wrap justify-center gap-6 md:gap-8 mb-12" style={{animationDelay: '0.45s'}}>
+            <div className="hero-anim flex flex-wrap justify-center gap-4 md:gap-8 mb-12" style={{animationDelay: '0.45s'}}>
               {features.map((f, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -106,8 +106,8 @@ function Hero() {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-xs text-[var(--text-secondary)]">Scroll to explore</span>
-          <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
-            <div className="w-1 h-2 rounded-full bg-white/40 animate-bounce"></div>
+          <div className="w-5 h-8 rounded-full border border-slate-300 flex items-start justify-center p-1">
+            <div className="w-1 h-2 rounded-full bg-slate-400 animate-bounce"></div>
           </div>
         </div>
       </section>
